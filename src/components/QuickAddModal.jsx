@@ -1,0 +1,93 @@
+import React, { useState } from 'react';
+import { X, Check } from 'lucide-react';
+import { useStore } from '../context/StoreContext';
+
+export default function QuickAddModal() {
+  const { quickAddProduct, setQuickAddProduct, addToCart } = useStore();
+  const [selectedSize, setSelectedSize] = useState('M');
+
+  if (!quickAddProduct) return null;
+
+  const handleAdd = () => {
+    addToCart(quickAddProduct, selectedSize, 1);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        onClick={() => setQuickAddProduct(null)}
+      />
+
+      {/* Modal Card */}
+      <div className="relative w-full max-w-sm bg-white p-6 shadow-2xl z-10 border border-brand-dark animate-in fade-in zoom-in-95 duration-200">
+        
+        {/* Header */}
+        <div className="flex items-start justify-between pb-3 border-b border-brand-border">
+          <div>
+            <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-brand-muted">
+              Select Size
+            </span>
+            <h3 className="font-heading font-black text-base uppercase text-brand-dark mt-0.5">
+              {quickAddProduct.name}
+            </h3>
+            <p className="text-xs text-brand-muted">{quickAddProduct.color} • ₹{quickAddProduct.price}</p>
+          </div>
+
+          <button
+            onClick={() => setQuickAddProduct(null)}
+            className="p-1 hover:bg-neutral-100 transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Product Preview Thumbnail */}
+        <div className="py-4 flex gap-4 items-center">
+          <img 
+            src={quickAddProduct.images[0]} 
+            alt={quickAddProduct.name}
+            className="w-16 h-20 object-cover bg-neutral-100 border border-brand-border" 
+          />
+          <div className="text-xs text-brand-muted">
+            <p>Fits true to size.</p>
+            <p className="mt-1 font-mono text-emerald-700 font-semibold">In stock & ready to ship</p>
+          </div>
+        </div>
+
+        {/* Sizes Grid */}
+        <div className="space-y-2">
+          <span className="text-xs font-heading font-bold uppercase tracking-wider text-brand-dark block">
+            Choose Size
+          </span>
+          <div className="grid grid-cols-3 gap-2">
+            {quickAddProduct.sizes.map((size) => (
+              <button
+                key={size}
+                onClick={() => setSelectedSize(size)}
+                className={`py-2 text-xs font-mono font-bold border transition-all cursor-pointer ${
+                  selectedSize === size
+                    ? 'border-brand-dark bg-brand-dark text-white'
+                    : 'border-brand-border bg-brand-canvas text-brand-dark hover:border-brand-dark'
+                }`}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Add to Bag CTA */}
+        <button
+          onClick={handleAdd}
+          className="mt-6 w-full bg-brand-dark text-white hover:bg-black py-3 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
+        >
+          <Check className="w-3.5 h-3.5" />
+          <span>Add to Bag — ₹{quickAddProduct.price}</span>
+        </button>
+
+      </div>
+    </div>
+  );
+}
