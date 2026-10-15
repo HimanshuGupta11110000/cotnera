@@ -40,21 +40,23 @@ function Storefront() {
 
         {/* 3. Full-Bleed 100vh Campaign Banner with 4vw Rounded Container and Centered Frosted Pill */}
         <CollectionBanner
-          title="Cotnerotsav — Navratri Edit"
-          buttonText="Shop All"
-          link="#shop-all"
-          image="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85"
+          title="Cotnera — Festive Elegance '26"
+          buttonText="Explore Collection"
+          link="#collection"
+          image="/images/products/product_10.jpg"
         />
 
         {/* 4. Curated Fits For You with #ebebeb 4vw Container, 4rem Capsule Tabs, and 4rem Rounded Cards */}
-        <FitsGallery />
+        <div id="fits">
+          <FitsGallery />
+        </div>
 
         {/* 5. The Debut Collection Drop (Core Product Catalog with In-Card Swiper & Size Selector) */}
         <FeaturedCollection
           id="collection"
-          title="The Debut Collection"
+          title="The Debut Drop"
           year="(2026)"
-          bannerImage="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=85"
+          bannerImage="/images/products/product_1.jpg"
           products={PRODUCTS}
         />
 

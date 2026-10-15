@@ -4,33 +4,28 @@ import { useStore } from '../context/StoreContext';
 
 const FITS_TABS_DATA = [
   {
-    name: 'Restocked',
+    name: 'Debut Drop',
     products: [
-      { id: 'rf-1', name: 'Jini Short Kurti', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85', price: 2499 },
-      { id: 'rf-2', name: 'Loose Cotton Pants', image: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=85', price: 1999 },
-      { id: 'rf-3', name: 'Moksha Halter', image: 'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=85', price: 1899 },
-      { id: 'rf-4', name: 'Umang Block Tunic', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=85', price: 2199 },
+      { id: 'prod-amber', name: 'The Amber Anarkali Gown', image: '/images/products/product_10.jpg', price: 3499, color: 'Golden Mustard', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-sitara', name: 'Sitara Halter Peplum Set', image: '/images/products/product_68.webp', price: 2899, color: 'Ivory & Gold', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-maya', name: 'Maya Ikat Slit Midi Dress', image: '/images/products/product_57.webp', price: 2699, color: 'Forest Olive', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-roohi', name: 'Roohi Peach Kurti Set', image: '/images/products/product_19.jpg', price: 2999, color: 'Peach Fuzz', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
     ]
   },
   {
-    name: 'Bottoms',
+    name: 'Co-ord Sets',
     products: [
-      { id: 'bf-1', name: 'White Linen Trouser', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=85', price: 1999 },
-      { id: 'bf-2', name: 'Gathered Cotton Skirt', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=85', price: 2299 },
+      { id: 'prod-sitara', name: 'Sitara Halter Peplum Set', image: '/images/products/product_68.webp', price: 2899, color: 'Ivory & Gold', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-prism', name: 'Prism Geometric Co-ord', image: '/images/products/product_79.webp', price: 2799, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-noir', name: 'Noir Tailored Vest Set', image: '/images/products/product_5.jpg', price: 2599, color: 'Jet Black', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
     ]
   },
   {
-    name: 'Tops',
+    name: 'Festive & Dresses',
     products: [
-      { id: 'tf-1', name: 'Aarti Corset Kurti', image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=85', price: 2499 },
-      { id: 'tf-2', name: 'Dabu Print Halter', image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=85', price: 1899 },
-    ]
-  },
-  {
-    name: 'Dresses',
-    products: [
-      { id: 'df-1', name: 'Morli Slit Kurti Dress', image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=85', price: 2299 },
-      { id: 'df-2', name: 'Tiered Linen Maxi', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=85', price: 2799 },
+      { id: 'prod-amber', name: 'The Amber Anarkali Gown', image: '/images/products/product_10.jpg', price: 3499, color: 'Golden Mustard', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-maya', name: 'Maya Ikat Slit Midi Dress', image: '/images/products/product_57.webp', price: 2699, color: 'Forest Olive', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-roohi', name: 'Roohi Peach Kurti Set', image: '/images/products/product_19.jpg', price: 2999, color: 'Peach Fuzz', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
     ]
   }
 ];
@@ -73,10 +68,10 @@ export default function FitsGallery() {
               onClick={() => setQuickAddProduct({
                 id: item.id,
                 name: item.name,
-                color: 'Editorial Silhouette',
+                color: item.color || 'Handcrafted Cotton',
                 price: item.price,
                 images: [item.image],
-                sizes: ['XS', 'S', 'M', 'L', 'XL']
+                sizes: item.sizes || ['XS', 'S', 'M', 'L', 'XL']
               })}
               className="flex-shrink-0 min-w-[140px] md:min-w-[17.4vw] w-[140px] md:w-[17.4vw] aspect-[3/4] overflow-hidden rounded-[2rem] md:rounded-[4rem] relative group cursor-pointer shadow-sm bg-neutral-200"
             >

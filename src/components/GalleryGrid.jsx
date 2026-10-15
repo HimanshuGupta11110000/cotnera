@@ -2,18 +2,18 @@ import React from 'react';
 
 const GALLERY_SETS = [
   {
-    item1: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85", // Large hero
-    item2: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85",
-    item3: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=85",
-    item4: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85",
-    item5: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85",
+    item1: "/images/products/product_10.jpg", // Large hero: Amber Festive Anarkali
+    item2: "/images/products/product_68.webp", // Sitara Halter Set
+    item3: "/images/products/product_57.webp", // Maya Ikat Dress
+    item4: "/images/products/product_79.webp", // Prism Geometric Set
+    item5: "/images/products/product_19.jpg",  // Roohi Peach Kurti Set
   },
   {
-    item1: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85", // Large hero
-    item2: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=85",
-    item3: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=85",
-    item4: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=85",
-    item5: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=85",
+    item1: "/images/products/product_68.webp", // Large hero: Sitara Halter Set
+    item2: "/images/products/product_3.jpg",   // Prism Peplum Mannequin
+    item3: "/images/products/product_24.jpg",  // Cotnera Tag Flat-lay
+    item4: "/images/products/product_5.jpg",   // Noir Tailored Vest Set
+    item5: "/images/products/product_7.webp",  // Sitara Back Halter Detail
   }
 ];
 

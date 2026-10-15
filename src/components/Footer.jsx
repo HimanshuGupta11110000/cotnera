@@ -26,8 +26,8 @@ export default function Footer() {
                 <MessageCircle className="w-3 h-3 text-emerald-600" />
                 <span>Text (WhatsApp)</span>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#482922]">
-                Instagram @cotnera
+              <a href="https://instagram.com/cotnera__" target="_blank" rel="noreferrer" className="hover:text-[#482922]">
+                Instagram @cotnera__
               </a>
               <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-[#482922]">
                 YouTube
@@ -52,12 +52,12 @@ export default function Footer() {
           {/* Block 3: Brand */}
           <div className="flex flex-col gap-2 md:gap-[0.8vw]">
             <h3 className="font-heading text-sm md:text-[0.75vw] text-[#482922] font-semibold uppercase tracking-wider pb-1 md:pb-[1vw]">
-              We Are Cotnera
+              Cotnera Studio
             </h3>
             <div className="flex flex-col gap-1.5 md:gap-[0.6vw] text-xs md:text-[0.7vw] font-heading text-[#482922]/80">
-              <a href="#story" className="hover:text-[#482922]">Our story</a>
-              <a href="#contact" className="hover:text-[#482922]">Contact us</a>
-              <a href="#artisans" className="hover:text-[#482922]">Artisan Collaborations</a>
+              <span className="text-[#482922] font-bold">By Akanksha & Riya</span>
+              <span>Sustainable • Comfortable • Minimal</span>
+              <span>Pure Handcrafted Cotton</span>
             </div>
           </div>
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default function CollectionBanner({ 
-  image = "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85",
-  title = "Cotnerotsav — Festive Edit",
-  buttonText = "Shop All",
-  link = "#shop-all" 
+  image = "/images/products/product_10.jpg",
+  title = "Cotnera — Festive Elegance '26",
+  buttonText = "Explore Collection",
+  link = "#collection" 
 }) {
   return (
     <section className="w-full h-[70vh] md:h-[100vh] relative">

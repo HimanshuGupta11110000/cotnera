@@ -142,7 +142,7 @@ export default function Header() {
               </span>
             </button>
 
-            {/* Top-Left Frosted Nav Links (At top of page like Nishorama) */}
+            {/* Top-Left Frosted Nav Links */}
             <nav 
               className="flex items-center gap-[0.45vw] transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)]"
               style={{
@@ -152,41 +152,16 @@ export default function Header() {
               }}
             >
               <a 
-                href="#new-in"
+                href="#collection"
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
               >
-                New in
+                The Debut Drop
               </a>
               <a 
-                href="#shop-all"
+                href="#fits"
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
               >
-                Shop All
-              </a>
-              <a 
-                href="#curated-fits"
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
-              >
-                Kurtis
-              </a>
-              <a 
-                href="#trending"
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center gap-[0.4vw] hover:bg-white transition-colors shadow-sm"
-              >
-                <span>Trending</span>
-                <span className="w-[0.4vw] h-[0.4vw] rounded-full bg-red-600 animate-pulse-dot inline-block"></span>
-              </a>
-              <a 
-                href="#tops"
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
-              >
-                Tops
-              </a>
-              <a 
-                href="#bottoms"
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
-              >
-                Bottom
+                Curated Fits
               </a>
             </nav>
 
@@ -207,7 +182,7 @@ export default function Header() {
                 textShadow: scrollProgress < 0.3 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.45)' : 'none'
               }}
             >
-              " YOU know where to GET  IT "
+              " WEAR IT. STYLE IT. REWEAR IT. "
             </pre>
           </div>
 
@@ -261,7 +236,7 @@ export default function Header() {
               <CotneraLogo className="w-full h-auto" fill="#482922" />
             </a>
             <span className="font-chalk text-[9px] text-[#482922] leading-none mt-0.5 select-none">
-              " YOU know where to GET IT "
+              " WEAR IT. STYLE IT. REWEAR IT. "
             </span>
           </div>
 

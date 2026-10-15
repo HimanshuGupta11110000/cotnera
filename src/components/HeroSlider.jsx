@@ -2,19 +2,24 @@ import React, { useState, useEffect } from 'react';
 
 const HERO_SLIDES = [
   {
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=88",
-    ctaText: "Cotnerotsav '26",
-    link: "#new-in"
+    image: "/images/products/product_10.jpg",
+    ctaText: "Diwali Festive Edit '26",
+    link: "#collection"
   },
   {
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2000&q=88",
-    ctaText: "Shop All Styles",
-    link: "#shop-all"
+    image: "/images/products/product_68.webp",
+    ctaText: "The Debut Drop '26",
+    link: "#collection"
   },
   {
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=88",
-    ctaText: "Most Wanted Edit",
-    link: "#most-wanted"
+    image: "/images/products/product_57.webp",
+    ctaText: "Handwoven Ikat Edit",
+    link: "#collection"
+  },
+  {
+    image: "/images/products/product_19.jpg",
+    ctaText: "Peach Fuzz Collection",
+    link: "#collection"
   }
 ];
 
