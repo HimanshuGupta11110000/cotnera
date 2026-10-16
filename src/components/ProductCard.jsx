@@ -105,6 +105,12 @@ export default function ProductCard({ product }) {
           </button>
         </div>
 
+        {/* Payment Methods Micro Badge */}
+        <div className="mt-1.5 flex items-center justify-between text-[9px] md:text-[0.55vw] text-neutral-500 font-mono">
+          <span>✓ UPI / GPay / COD</span>
+          <span className="text-emerald-700 font-bold">Free Shipping</span>
+        </div>
+
       </div>
 
     </div>

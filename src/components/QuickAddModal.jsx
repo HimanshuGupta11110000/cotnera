@@ -81,11 +81,21 @@ export default function QuickAddModal() {
         {/* Add to Bag CTA */}
         <button
           onClick={handleAdd}
-          className="mt-6 w-full bg-brand-dark text-white hover:bg-black py-3 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
+          className="mt-6 w-full bg-[#482922] text-white hover:bg-black py-3 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer rounded-lg"
         >
           <Check className="w-3.5 h-3.5" />
           <span>Add to Bag — ₹{quickAddProduct.price}</span>
         </button>
+
+        {/* Payment Methods Trust Banner */}
+        <div className="mt-3 pt-3 border-t border-neutral-200 text-center space-y-1">
+          <p className="font-heading font-bold text-[10px] uppercase text-[#482922] tracking-wider">
+            All Payment Methods Accepted:
+          </p>
+          <p className="text-[9px] font-mono text-neutral-600">
+            Google Pay • PhonePe • Paytm • UPI • Cash on Delivery (COD)
+          </p>
+        </div>
 
       </div>
     </div>

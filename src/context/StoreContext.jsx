@@ -15,6 +15,10 @@ export function StoreProvider({ children }) {
   ]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Dedicated UPI & Direct Checkout Modal state
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [checkoutInitialMode, setCheckoutInitialMode] = useState('UPI');
+
   // Quick Add Modal state
   const [quickAddProduct, setQuickAddProduct] = useState(null);
 
@@ -47,6 +51,10 @@ export function StoreProvider({ children }) {
     setCartItems(prev => prev.filter(item => !(item.product.id === productId && item.size === size)));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const updateQuantity = (productId, size, delta) => {
     setCartItems(prev => {
       return prev.map(item => {
@@ -67,32 +75,19 @@ export function StoreProvider({ children }) {
     return cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
   }, [cartItems]);
 
+  const openCheckout = (mode = 'UPI') => {
+    setCheckoutInitialMode(mode);
+    setIsCartOpen(false);
+    setIsCheckoutOpen(true);
+  };
+
+  const closeCheckout = () => {
+    setIsCheckoutOpen(false);
+  };
+
   // Zero-fee WhatsApp Checkout order generator
   const proceedToWhatsAppOrder = (paymentMode = 'UPI') => {
-    if (cartItems.length === 0) return;
-    
-    let message = `🛍️ *NEW ORDER - COTNERA*\n`;
-    message += `─────────────────────────\n`;
-    cartItems.forEach((item, idx) => {
-      message += `${idx + 1}. *${item.product.name}*\n   • Size: ${item.size}\n   • Qty: ${item.quantity}\n   • Price: ₹${item.product.price * item.quantity}\n\n`;
-    });
-    message += `─────────────────────────\n`;
-    message += `*Total Amount:* ₹${cartSubtotal} (All Taxes Included)\n\n`;
-    message += `*Customer Delivery Details:*\n`;
-    message += `• Name: \n`;
-    message += `• Delivery Address: \n`;
-    message += `• Pincode: \n`;
-    if (paymentMode === 'COD') {
-      message += `• Payment Mode: Cash on Delivery (COD)\n\n`;
-      message += `Please confirm my order and share delivery details!`;
-    } else {
-      message += `• Payment Mode: Direct UPI (GPay / PhonePe / Paytm)\n\n`;
-      message += `Please confirm my order and share UPI details for payment!`;
-    }
-
-    const encodedMessage = encodeURIComponent(message);
-    const cleanPhone = BRAND.whatsapp.replace(/[^0-9]/g, '');
-    window.open(`https://wa.me/${cleanPhone}?text=${encodedMessage}`, '_blank');
+    openCheckout(paymentMode);
   };
 
   // Story controls
@@ -111,6 +106,12 @@ export function StoreProvider({ children }) {
     cartSubtotal,
     isCartOpen,
     setIsCartOpen,
+    isCheckoutOpen,
+    setIsCheckoutOpen,
+    checkoutInitialMode,
+    openCheckout,
+    closeCheckout,
+    clearCart,
     addToCart,
     removeFromCart,
     updateQuantity,

@@ -76,13 +76,18 @@ export default function Footer() {
         </div>
 
         {/* Payment Methods */}
-        <div className="pt-8 md:pt-[3vw] pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10 text-xs md:text-[0.75vw] font-heading text-[#482922]">
-          <p>We accept all major domestic Indian payment methods:</p>
-          <div className="flex flex-wrap gap-2 text-[11px] md:text-[0.65vw] font-bold font-mono">
-            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300">UPI (GPay / PhonePe)</span>
-            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300">Cash on Delivery</span>
-            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300">Cards</span>
-            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300">NetBanking</span>
+        <div className="pt-8 md:pt-[3vw] pb-4 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10 text-xs md:text-[0.75vw] font-heading text-[#482922] border-t border-[#d5d5d5] mt-6">
+          <div className="space-y-0.5 text-center md:text-left">
+            <p className="font-bold uppercase tracking-wider text-[11px] md:text-[0.7vw]">We Accept All Payment Methods:</p>
+            <p className="text-[10px] md:text-[0.65vw] text-neutral-600">Google Pay, PhonePe, Paytm, BHIM, all UPI apps, Net Banking & Cash on Delivery (COD)</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-1.5 text-[10px] md:text-[0.62vw] font-bold font-mono">
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-[#1a73e8] shadow-2xs">Google Pay</span>
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-[#5f259f] shadow-2xs">PhonePe</span>
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-[#00b9f5] shadow-2xs">Paytm</span>
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-emerald-700 shadow-2xs">BHIM UPI</span>
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-neutral-800 shadow-2xs">Cash on Delivery</span>
+            <span className="px-2.5 py-1 bg-white rounded-full border border-neutral-300 text-neutral-600 shadow-2xs">NetBanking</span>
           </div>
         </div>
 

@@ -3,6 +3,8 @@ export const BRAND = {
   tagline: '" WEAR IT. STYLE IT. REWEAR IT. "',
   phone: "+91 63979 43289",
   whatsapp: "+91 63979 43289",
+  upiId: "6397943289@upi",
+  upiName: "COTNERA",
   instagram: "https://instagram.com/cotnera__",
   instagramHandle: "@cotnera__",
   founders: "Akanksha & Riya",
@@ -10,100 +12,76 @@ export const BRAND = {
   address: "Handcrafted with love in India",
   currencySymbol: "₹",
   freeShippingThreshold: 1499,
+  acceptedPayments: "Google Pay, PhonePe, Paytm, all UPI apps, Net Banking & Cash on Delivery (COD)",
 };
 
 export const NAV_LINKS = [
-  { name: "New in", href: "#new-in" },
-  { name: "Shop All", href: "#shop-all" },
-  { name: "Kurtis", href: "#kurtis" },
-  { name: "Back in stock", href: "#back-in-stock", hasBadge: true },
+  { name: "The Debut Drop", href: "#collection" },
+  { name: "Curated Fits", href: "#fits" },
+  { name: "Festive & Handloom", href: "#collection" },
 ];
 
 export const MEGA_MENU_DROPS = [
-  { name: "NEW IN", href: "#new-in" },
-  { name: "MOST WANTED", href: "#most-wanted" },
-  { name: "FESTIVE BANGERS", href: "#festive" },
-  { name: "NAZAR NA LAGE", href: "#nazar" },
-  { name: "COTNERA MUSE", href: "#muse" },
-  { name: "RESTOCKED", href: "#restocked" },
-  { name: "COTNEROTSAV", href: "#cotnerotsav" },
-  { name: "SHOP ALL", href: "#shop-all" },
+  { name: "THE DEBUT DROP '26", href: "#collection" },
+  { name: "CO-ORD SETS", href: "#fits" },
+  { name: "FESTIVE ANARKALIS", href: "#collection" },
+  { name: "HANDLOOM IKAT", href: "#collection" },
+  { name: "PEPLUM & VEST SETS", href: "#fits" },
+  { name: "SHOP ALL (6 PIECES)", href: "#collection" },
 ];
 
 export const MEGA_MENU_COLLECTIONS = [
   {
-    category: "KURTIS",
+    category: "SILHOUETTES",
     items: [
-      { name: "Short Kurtis", tag: "Fam Fav." },
-      { name: "Long Kurtis" },
-      { name: "Sleeveless Kurtis" },
-      { name: "Sleeved Kurtis" },
-      { name: "Corset Kurtis" },
-      { name: "Deep Back Kurtis" },
-      { name: "Halter Kurtis" },
-      { name: "All Kurtis", isBold: true },
+      { name: "Peplum Sets" },
+      { name: "Anarkali Gowns" },
+      { name: "Slit Midi Dresses" },
+      { name: "3-Piece Kurti Sets" },
+      { name: "Tailored Vests" },
+      { name: "All Silhouettes", isBold: true },
     ],
   },
   {
-    category: "DRESSES",
+    category: "FABRICS & CRAFTS",
     items: [
-      { name: "Maxi Dresses" },
-      { name: "Mini Dresses" },
-      { name: "Slip Dresses" },
-      { name: "Shop All Dresses", isBold: true },
+      { name: "Pure Cotton Slub" },
+      { name: "Handloom Ikat" },
+      { name: "Chanderi Silk" },
+      { name: "Metallic Foil Slub" },
+      { name: "Scallop Lace Detailing" },
+      { name: "100% Breathable Weaves", isBold: true },
     ],
   },
   {
-    category: "SETS",
+    category: "THE EDITS",
     items: [
-      { name: "Skirt Sets" },
-      { name: "3-Piece Sets" },
-      { name: "2-Piece Co-ords" },
-      { name: "Shop All Sets", isBold: true },
+      { name: "Diwali Festive Edit" },
+      { name: "Everyday Minimal" },
+      { name: "Peach Fuzz Edit" },
+      { name: "Heritage Weaves" },
+      { name: "View All 6 Pieces", isBold: true },
     ],
   },
   {
-    category: "COTNERA MEN",
+    category: "COTNERA STUDIO",
     items: [
-      { name: "Casual Kurtas" },
-      { name: "Festive Tunics" },
-      { name: "Shop All Men", isBold: true },
-    ],
-  },
-  {
-    category: "TOPS",
-    items: [
-      { name: "Corset Tops" },
-      { name: "Halter Tops" },
-      { name: "Fitted Tops" },
-      { name: "Cover Ups" },
-      { name: "All Tops", isBold: true },
-    ],
-  },
-  {
-    category: "BOTTOMS",
-    items: [
-      { name: "Wide-Leg Pants" },
-      { name: "Flared Skirts" },
-      { name: "Linen Trousers" },
-      { name: "All Bottoms", isBold: true },
+      { name: "By Akanksha & Riya" },
+      { name: '"Wear It. Style It. Rewear It."' },
+      { name: "Made in India" },
+      { name: "Direct UPI & COD Available", isBold: true },
+      { name: "Custom Sizing on WhatsApp" },
     ],
   },
 ];
 
 export const CATEGORIES = [
-  { id: "tops", name: "Tops", count: "(239)", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" },
-  { id: "sleeveless", name: "Sleeveless", count: "(142)", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" },
-  { id: "deep-back", name: "Deep Back", count: "(98)", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" },
-  { id: "corset", name: "Corset", count: "(76)", image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" },
-  { id: "dresses", name: "Dresses", count: "(115)", image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" },
-  { id: "sets", name: "Sets", count: "(84)", image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=600&q=80" },
-  { id: "short-kurti", name: "Short Kurti", count: "(164)", image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=80" },
-  { id: "pants", name: "Pants", count: "(62)", image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80" },
-  { id: "accessories", name: "Accessories", count: "(45)", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
-  { id: "long-kurti", name: "Long Kurti", count: "(128)", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" },
-  { id: "skirt", name: "Skirts", count: "(51)", image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" },
-  { id: "bottoms", name: "Bottoms", count: "(88)", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" },
+  { id: "anarkalis", name: "Anarkalis & Festive", count: "(1)", image: "/images/products/product_10.jpg" },
+  { id: "peplum", name: "Peplum Sets", count: "(2)", image: "/images/products/product_68.webp" },
+  { id: "handloom", name: "Handloom Ikat", count: "(1)", image: "/images/products/product_57.webp" },
+  { id: "coords", name: "Co-ord Sets", count: "(3)", image: "/images/products/product_79.webp" },
+  { id: "kurtis", name: "Kurti & Palazzo", count: "(1)", image: "/images/products/product_19.jpg" },
+  { id: "vests", name: "Tailored Vests", count: "(1)", image: "/images/products/product_5.jpg" },
 ];
 
 export const STORIES = [
@@ -179,7 +157,7 @@ export const PRODUCTS = [
     color: "Ivory & Subtle Gold",
     price: 2899,
     originalPrice: 3999,
-    badge: "Bestseller",
+    badge: "Gold Foil Slub",
     images: [
       "/images/products/product_68.webp",
       "/images/products/product_7.webp",
@@ -194,7 +172,7 @@ export const PRODUCTS = [
     color: "Forest Olive Green",
     price: 2699,
     originalPrice: 3799,
-    badge: "Handloom",
+    badge: "Handloom Ikat",
     images: [
       "/images/products/product_57.webp",
       "/images/products/product_6.webp",
@@ -209,7 +187,7 @@ export const PRODUCTS = [
     color: "Slate & Sand",
     price: 2799,
     originalPrice: 3899,
-    badge: "Trending",
+    badge: "Pure Cotton Co-ord",
     images: [
       "/images/products/product_79.webp",
       "/images/products/product_3.jpg",
@@ -225,7 +203,7 @@ export const PRODUCTS = [
     color: "Peach Fuzz",
     price: 2999,
     originalPrice: 4299,
-    badge: "Fam Fav.",
+    badge: "Peach Fuzz 3-Pc",
     images: [
       "/images/products/product_19.jpg",
       "/images/products/product_24.jpg",
@@ -241,7 +219,7 @@ export const PRODUCTS = [
     color: "Jet Black",
     price: 2599,
     originalPrice: 3599,
-    badge: "Minimal Edit",
+    badge: "Tailored Luxe",
     images: [
       "/images/products/product_5.jpg",
     ],

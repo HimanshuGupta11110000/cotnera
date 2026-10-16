@@ -12,6 +12,7 @@ export default function CartDrawer() {
     updateQuantity, 
     removeFromCart, 
     proceedToWhatsAppOrder,
+    openCheckout,
     setQuickAddProduct
   } = useStore();
 
@@ -198,7 +199,7 @@ export default function CartDrawer() {
             
             <div className="flex items-center justify-between text-xs">
               <span className="text-brand-muted uppercase font-heading">Taxes & Shipping</span>
-              <span className="font-bold text-emerald-700">Calculated at Checkout (All taxes incl.)</span>
+              <span className="font-bold text-emerald-700">Free Domestic Shipping (All taxes incl.)</span>
             </div>
 
             <div className="flex items-center justify-between pt-2 border-t border-neutral-200">
@@ -210,28 +211,45 @@ export default function CartDrawer() {
               </span>
             </div>
 
-            {/* Zero-Gateway Instant WhatsApp Order CTA (Direct UPI) */}
-            <button
-              onClick={() => proceedToWhatsAppOrder('UPI')}
-              className="w-full bg-[#1e7e34] hover:bg-[#155724] text-white py-3.5 px-4 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all shadow-sm cursor-pointer rounded-none active:scale-[0.99]"
-            >
-              <MessageCircle className="w-4 h-4 fill-white/20" />
-              <span>Order via WhatsApp (UPI / GPay)</span>
-            </button>
+            {/* Comprehensive "We Accept All Payment Methods" Trust Strip */}
+            <div className="bg-[#FAF8F5] border border-[#E9E4DC] p-3 rounded-lg space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading font-bold text-[10px] uppercase text-[#482922] tracking-wider">
+                  Payment Methods Accepted:
+                </span>
+                <span className="text-[9px] font-mono text-emerald-700 font-bold">100% SECURE</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5 text-[9px] font-heading font-semibold text-neutral-700">
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-[#1a73e8]">Google Pay</span>
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-[#5f259f]">PhonePe</span>
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-[#00b9f5]">Paytm</span>
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-emerald-700">BHIM UPI</span>
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-neutral-800">COD</span>
+                <span className="px-2 py-0.5 bg-white border border-neutral-200 rounded text-neutral-600">NetBanking</span>
+              </div>
+            </div>
 
-            {/* Direct WhatsApp Order CTA (Cash On Delivery) */}
+            {/* Primary Checkout CTA (Direct UPI Flow) */}
             <button
-              onClick={() => proceedToWhatsAppOrder('COD')}
-              className="w-full border-2 border-brand-dark bg-brand-dark text-white hover:bg-black py-2.5 px-4 font-heading text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer rounded-none active:scale-[0.99]"
+              onClick={() => openCheckout('UPI')}
+              className="w-full bg-[#482922] hover:bg-black text-white py-3.5 px-4 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all shadow-md cursor-pointer rounded-lg active:scale-[0.99]"
             >
-              <span>Order via WhatsApp (Cash on Delivery)</span>
+              <span>Pay via UPI (GPay / PhonePe / Paytm)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
+            {/* Secondary Checkout CTA (Cash On Delivery Flow) */}
+            <button
+              onClick={() => openCheckout('COD')}
+              className="w-full border border-[#482922] bg-white text-[#482922] hover:bg-neutral-50 py-2.5 px-4 font-heading text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer rounded-lg active:scale-[0.99]"
+            >
+              <span>Pay Cash on Delivery (COD)</span>
+            </button>
+
             {/* Trust Badges */}
-            <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-brand-muted">
+            <div className="flex items-center justify-center gap-2 pt-1 text-[10px] text-brand-muted">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>100% Secure Domestic Checkout • Verified Quality</span>
+              <span>Zero Gateway Commission • Direct WhatsApp Updates</span>
             </div>
 
           </div>

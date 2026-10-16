@@ -11,6 +11,7 @@ import MegaMenu from './components/MegaMenu';
 import SearchModal from './components/SearchModal';
 import CartDrawer from './components/CartDrawer';
 import QuickAddModal from './components/QuickAddModal';
+import UpiCheckoutModal from './components/UpiCheckoutModal';
 import { PRODUCTS } from './data/mockData';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
 
@@ -25,6 +26,7 @@ function Storefront() {
       <SearchModal />
       <CartDrawer />
       <QuickAddModal />
+      <UpiCheckoutModal />
 
       {/* Floating Header with Scroll-Driven Flying Logo & Chalk Tagline */}
       <Header />
@@ -59,6 +61,48 @@ function Storefront() {
           bannerImage="/images/products/product_1.jpg"
           products={PRODUCTS}
         />
+
+        {/* 6. Brand Values & All Payment Methods Acceptance Strip */}
+        <div className="w-full px-4 md:px-[1.5vw] pb-10">
+          <div className="w-full bg-[#FAF8F5] border border-[#E9E4DC] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-[2.5vw_3vw] grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-xs">
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl mb-1.5">💳</span>
+              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                All Payments Accepted
+              </h4>
+              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                Google Pay, PhonePe, Paytm, all UPI apps & Cash on Delivery (COD)
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl mb-1.5">✨</span>
+              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                Direct 1-Click UPI Pay
+              </h4>
+              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                Zero gateway fees • Dynamic QR codes & instant WhatsApp dispatch
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl mb-1.5">🌿</span>
+              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                Pure Cotton & Handloom
+              </h4>
+              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                Handcrafted in India by designers Akanksha & Riya
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl mb-1.5">💬</span>
+              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                WhatsApp Concierge
+              </h4>
+              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                Direct order tracking & custom sizing at +91 63979 43289
+              </p>
+            </div>
+          </div>
+        </div>
 
       </main>
 
