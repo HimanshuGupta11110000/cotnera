@@ -113,17 +113,9 @@ export default function Header() {
         </div>
       )}
 
-      {/* 2. THE FLOATING HEADER CONTROLS */}
+      {/* 2. THE FLOATING HEADER CONTROLS (Clean 1:1 with Nishorama) */}
       <header className="fixed top-0 left-0 w-full z-[55] pointer-events-none">
         
-        {/* TOP TRUST & PAYMENT METHODS TICKER BAR */}
-        <div className="w-full bg-[#482922] text-[#fff] text-[10px] md:text-[0.68vw] py-1.5 px-3 md:px-6 text-center font-heading font-medium tracking-wide flex items-center justify-center gap-2 pointer-events-auto border-b border-[#F6C582]/20 shadow-sm">
-          <span className="font-bold text-[#F6C582] tracking-wider uppercase text-[9px] md:text-[0.65vw]">All Payment Methods Accepted:</span>
-          <span>Google Pay • PhonePe • Paytm • Any UPI • Cash on Delivery (COD)</span>
-          <span className="hidden md:inline opacity-30">|</span>
-          <span className="hidden md:inline text-[#F6C582] font-bold">✨ Free Shipping on Orders ₹1,499+</span>
-        </div>
-
         {/* DESKTOP HEADER BAR */}
         <div className="hidden md:flex w-full px-[1.5vw] pt-[1vw] items-center justify-between pointer-events-auto relative">
           
