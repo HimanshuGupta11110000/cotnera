@@ -13,6 +13,7 @@ import CartDrawer from './components/CartDrawer';
 import QuickAddModal from './components/QuickAddModal';
 import UpiCheckoutModal from './components/UpiCheckoutModal';
 import SizeChartModal from './components/SizeChartModal';
+import ProductDetailModal from './components/ProductDetailModal';
 import MobileCategoryGrid from './components/MobileCategoryGrid';
 import { PRODUCTS } from './data/mockData';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
@@ -27,6 +28,7 @@ function Storefront() {
       <MegaMenu />
       <SearchModal />
       <CartDrawer />
+      <ProductDetailModal />
       <QuickAddModal />
       <UpiCheckoutModal />
       <SizeChartModal />

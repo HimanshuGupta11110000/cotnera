@@ -22,6 +22,17 @@ export function StoreProvider({ children }) {
   // Quick Add Modal state
   const [quickAddProduct, setQuickAddProduct] = useState(null);
 
+  // Full Nishorama-Style Product Detail Modal (PDP) state
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const openProductDetail = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const closeProductDetail = () => {
+    setSelectedProduct(null);
+  };
+
   // Story Viewer state
   const [isStoryOpen, setIsStoryOpen] = useState(false);
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
@@ -124,6 +135,10 @@ export function StoreProvider({ children }) {
     proceedToWhatsAppOrder,
     quickAddProduct,
     setQuickAddProduct,
+    selectedProduct,
+    setSelectedProduct,
+    openProductDetail,
+    closeProductDetail,
     isStoryOpen,
     activeStoryIndex,
     openStory,
