@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Ruler } from 'lucide-react';
 import CotneraLogo from './CotneraLogo';
 import { useStore } from '../context/StoreContext';
 
@@ -9,7 +9,9 @@ export default function Header() {
     setIsCartOpen, 
     isMenuOpen, 
     setIsMenuOpen, 
-    setIsSearchOpen, 
+    setIsSearchOpen,
+    setIsSizeChartOpen,
+    setActiveCategory,
   } = useStore();
 
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -153,27 +155,37 @@ export default function Header() {
             >
               <a 
                 href="#collection"
+                onClick={() => setActiveCategory('most-wanted')}
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
               >
-                The Debut Drop
-              </a>
-              <a 
-                href="#fits"
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
-              >
-                Curated Fits
+                Most Wanted
               </a>
               <a 
                 href="#collection"
+                onClick={() => setActiveCategory('coord-sets')}
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
               >
-                Festive & Handloom
+                Co-ord Sets
               </a>
+              <a 
+                href="#collection"
+                onClick={() => setActiveCategory('festive')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
+              >
+                Festive Edit
+              </a>
+              <button 
+                onClick={() => setIsSizeChartOpen(true)}
+                className="h-[1.7vw] px-[0.7vw] bg-[#FAF8F5]/95 backdrop-blur-[20px] border border-[#C5A059] rounded-full text-[#482922] font-heading text-[0.68vw] font-bold flex items-center gap-[0.3vw] hover:bg-white transition-colors shadow-sm cursor-pointer"
+              >
+                <Ruler className="w-[0.7vw] h-[0.7vw] text-[#C5A059]" />
+                <span>Size Guide</span>
+              </button>
             </nav>
 
           </div>
 
-          {/* CENTER: The Signature Animated Tagline in Bright Chalk font */}
+          {/* CENTER: The Signature Animated Tagline in Normal Readable Font */}
           <div 
             className="home-page-line absolute left-1/2 pointer-events-none transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)] z-10"
             style={{
@@ -181,15 +193,15 @@ export default function Header() {
               opacity: taglineOpacity,
             }}
           >
-            <pre 
-              className="m-0 font-chalk text-[1.45vw] tracking-[0.02em] font-normal select-none"
+            <p 
+              className="m-0 font-heading text-[0.85vw] font-bold tracking-[0.25em] uppercase select-none transition-colors"
               style={{
                 color: taglineColor,
-                textShadow: scrollProgress < 0.3 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.45)' : 'none'
+                textShadow: scrollProgress < 0.3 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.5)' : 'none'
               }}
             >
               " WEAR IT. STYLE IT. REWEAR IT. "
-            </pre>
+            </p>
           </div>
 
           {/* RIGHT: Search + Currency + Cart */}
@@ -223,11 +235,11 @@ export default function Header() {
 
         </div>
 
-        {/* MOBILE HEADER (Left: Menu, Center: Logo + Chalk Tagline, Right: Search + Cart) */}
+        {/* MOBILE HEADER (Left: Menu, Center: Logo + Readable Tagline, Right: Search + Cart) */}
         <div className="flex md:hidden w-full items-center justify-between px-3 pt-2.5 pb-2 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 pointer-events-auto">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="h-8 px-3 bg-[#482922] text-white rounded-full flex items-center gap-1.5 focus:outline-none"
+            className="h-8 px-3 bg-[#482922] text-white rounded-full flex items-center gap-1.5 focus:outline-none cursor-pointer"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
             <div className="w-3 flex flex-col gap-1 justify-center items-center">
@@ -237,20 +249,20 @@ export default function Header() {
             <span className="font-heading text-xs font-medium">Menu</span>
           </button>
 
-          <div className="flex flex-col items-center">
-            <a href="/" className="block w-[30vw]">
+          <div className="flex flex-col items-center max-w-[50vw]">
+            <a href="/" className="block w-[28vw] max-w-[120px]">
               <CotneraLogo className="w-full h-auto" fill="#482922" />
             </a>
-            <span className="font-chalk text-[9px] text-[#482922] leading-none mt-0.5 select-none">
+            <span className="font-heading text-[8px] font-bold tracking-[0.12em] uppercase text-[#482922]/85 leading-none mt-1 select-none whitespace-nowrap">
               " WEAR IT. STYLE IT. REWEAR IT. "
             </span>
           </div>
 
           <div className="flex items-center gap-1.5">
-            <button onClick={() => setIsSearchOpen(true)} className="p-1.5 text-[#482922]" aria-label="Search">
+            <button onClick={() => setIsSearchOpen(true)} className="p-1.5 text-[#482922] cursor-pointer" aria-label="Search">
               <Search className="w-4 h-4" />
             </button>
-            <button onClick={() => setIsCartOpen(true)} className="h-8 px-3 bg-neutral-100 border border-neutral-200 rounded-full flex items-center gap-1 text-[#482922]">
+            <button onClick={() => setIsCartOpen(true)} className="h-8 px-3 bg-neutral-100 border border-neutral-200 rounded-full flex items-center gap-1 text-[#482922] cursor-pointer">
               <span className="font-heading text-xs font-bold">Cart</span>
               <span className="text-xs font-bold">{cartCount}</span>
             </button>

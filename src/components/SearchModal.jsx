@@ -4,13 +4,14 @@ import { PRODUCTS } from '../data/mockData';
 import { useStore } from '../context/StoreContext';
 
 const POPULAR_SEARCHES = [
-  'Amber Anarkali',
-  'Sitara Halter Peplum',
-  'Maya Handloom Ikat',
-  'Prism Geometric Co-ord',
-  'Roohi Peach Kurti',
-  'Noir Tailored Vest',
-  'Diwali Festive Edit',
+  'Most Wanted',
+  'Co-ord Sets',
+  'Denim Halter',
+  'Sitara Peplum',
+  'Beige Tailored Vest',
+  'Prism Geometric',
+  'Indigo Kurti',
+  'Festive Anarkali',
 ];
 
 export default function SearchModal() {

@@ -2,18 +2,18 @@ import React from 'react';
 
 const GALLERY_SETS = [
   {
-    item1: "/images/products/product_10.jpg", // Large hero: Amber Festive Anarkali
-    item2: "/images/products/product_68.webp", // Sitara Halter Set
-    item3: "/images/products/product_57.webp", // Maya Ikat Dress
-    item4: "/images/products/product_79.webp", // Prism Geometric Set
-    item5: "/images/products/product_19.jpg",  // Roohi Peach Kurti Set
+    item1: "/images/catalog/IMG-20261017-WA0039.jpg", // Sitara Halter Peplum Set
+    item2: "/images/catalog/IMG-20261017-WA0043.jpg", // Denim Halter Maxi
+    item3: "/images/catalog/IMG-20261017-WA0032.jpg", // Beige Vest Set
+    item4: "/images/catalog/IMG-20261017-WA0027.jpg", // Surya Rust Anarkali
+    item5: "/images/catalog/IMG-20260930-WA0007.jpg", // Indigo Floral Kurti
   },
   {
-    item1: "/images/products/product_68.webp", // Large hero: Sitara Halter Set
-    item2: "/images/products/product_3.jpg",   // Prism Peplum Mannequin
-    item3: "/images/products/product_24.jpg",  // Cotnera Tag Flat-lay
-    item4: "/images/products/product_5.jpg",   // Noir Tailored Vest Set
-    item5: "/images/products/product_7.webp",  // Sitara Back Halter Detail
+    item1: "/images/catalog/IMG-20261017-WA0030.jpg", // Noir Black Vest Set
+    item2: "/images/catalog/IMG-20261017-WA0029.jpg", // Prism Geometric Co-ord
+    item3: "/images/catalog/IMG-20261017-WA0041.jpg", // Mustard Polka Festive Gown
+    item4: "/images/catalog/IMG-20261017-WA0053.jpg", // Gulabo Pink Organza Anarkali
+    item5: "/images/catalog/IMG-20261018-WA0020.jpg", // Maya Green Ikat Slit Dress
   }
 ];
 

@@ -12,6 +12,8 @@ import SearchModal from './components/SearchModal';
 import CartDrawer from './components/CartDrawer';
 import QuickAddModal from './components/QuickAddModal';
 import UpiCheckoutModal from './components/UpiCheckoutModal';
+import SizeChartModal from './components/SizeChartModal';
+import MobileCategoryGrid from './components/MobileCategoryGrid';
 import { PRODUCTS } from './data/mockData';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
 
@@ -27,8 +29,9 @@ function Storefront() {
       <CartDrawer />
       <QuickAddModal />
       <UpiCheckoutModal />
+      <SizeChartModal />
 
-      {/* Floating Header with Scroll-Driven Flying Logo & Chalk Tagline */}
+      {/* Floating Header with Scroll-Driven Flying Logo & Readable Tagline */}
       <Header />
       
       {/* Main Experience */}
@@ -37,28 +40,31 @@ function Storefront() {
         {/* 1. Full 100vh Cross-Fade Hero Slider with Big Centered Logo overlay */}
         <HeroSlider />
 
-        {/* 2. Infinite Auto-Moving Masonry Lookbook Wall (45s Marquee with 72px/48px Rounded Pills) */}
+        {/* 2. Infinite Auto-Moving Masonry Lookbook Wall */}
         <GalleryGrid />
 
-        {/* 3. Full-Bleed 100vh Campaign Banner with 4vw Rounded Container and Centered Frosted Pill */}
+        {/* 3. Nishorama-Style Category Grid (Most Wanted, Co-ord Sets, Kurtis, Festive Collection, Dresses) */}
+        <MobileCategoryGrid />
+
+        {/* 4. Full-Bleed Campaign Banner */}
         <CollectionBanner
           title="Cotnera — Festive Elegance '26"
           buttonText="Explore Collection"
           link="#collection"
-          image="/images/products/product_10.jpg"
+          image="/images/catalog/IMG-20261017-WA0027.jpg"
         />
 
-        {/* 4. Curated Fits For You with #ebebeb 4vw Container, 4rem Capsule Tabs, and 4rem Rounded Cards */}
+        {/* 5. Curated Fits For You with Capsule Tabs */}
         <div id="fits">
           <FitsGallery />
         </div>
 
-        {/* 5. The Debut Collection Drop (Core Product Catalog with In-Card Swiper & Size Selector) */}
+        {/* 6. The Debut Collection Drop (All 22 Products with In-Card Multi-Photo Slider & Size Guide) */}
         <FeaturedCollection
           id="collection"
           title="The Debut Drop"
           year="(2026)"
-          bannerImage="/images/products/product_1.jpg"
+          bannerImage="/images/catalog/IMG-20261017-WA0043.jpg"
           products={PRODUCTS}
         />
 

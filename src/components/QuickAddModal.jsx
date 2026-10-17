@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, Ruler } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 
 export default function QuickAddModal() {
-  const { quickAddProduct, setQuickAddProduct, addToCart } = useStore();
+  const { quickAddProduct, setQuickAddProduct, addToCart, setIsSizeChartOpen } = useStore();
   const [selectedSize, setSelectedSize] = useState('M');
 
   if (!quickAddProduct) return null;
@@ -21,7 +21,7 @@ export default function QuickAddModal() {
       />
 
       {/* Modal Card */}
-      <div className="relative w-full max-w-sm bg-white p-6 shadow-2xl z-10 border border-brand-dark animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-sm bg-white p-6 shadow-2xl z-10 border border-brand-dark animate-in fade-in zoom-in-95 duration-200 rounded-2xl">
         
         {/* Header */}
         <div className="flex items-start justify-between pb-3 border-b border-brand-border">
@@ -37,7 +37,7 @@ export default function QuickAddModal() {
 
           <button
             onClick={() => setQuickAddProduct(null)}
-            className="p-1 hover:bg-neutral-100 transition-colors"
+            className="p-1 hover:bg-neutral-100 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -46,9 +46,9 @@ export default function QuickAddModal() {
         {/* Product Preview Thumbnail */}
         <div className="py-4 flex gap-4 items-center">
           <img 
-            src={quickAddProduct.images[0]} 
+            src={quickAddProduct.images ? quickAddProduct.images[0] : quickAddProduct.image} 
             alt={quickAddProduct.name}
-            className="w-16 h-20 object-cover bg-neutral-100 border border-brand-border" 
+            className="w-16 h-20 object-cover bg-neutral-100 border border-brand-border rounded-lg" 
           />
           <div className="text-xs text-brand-muted">
             <p>Fits true to size.</p>
@@ -58,9 +58,19 @@ export default function QuickAddModal() {
 
         {/* Sizes Grid */}
         <div className="space-y-2">
-          <span className="text-xs font-heading font-bold uppercase tracking-wider text-brand-dark block">
-            Choose Size
-          </span>
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-heading font-bold uppercase tracking-wider text-brand-dark">
+              Choose Size
+            </span>
+            <button
+              type="button"
+              onClick={() => setIsSizeChartOpen(true)}
+              className="text-[11px] font-heading font-bold text-[#482922] flex items-center gap-1 underline underline-offset-2 hover:opacity-75 cursor-pointer"
+            >
+              <Ruler className="w-3.5 h-3.5 text-[#C5A059]" />
+              <span>Size Guide</span>
+            </button>
+          </div>
           <div className="grid grid-cols-3 gap-2">
             {quickAddProduct.sizes.map((size) => (
               <button

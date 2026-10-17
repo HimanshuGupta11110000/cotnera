@@ -22,6 +22,7 @@ Thumbs.db
 
 # Dev test screenshots & artifacts
 *.png
+!public/**/*.png
 verify-site.js
 test-logo.svg
 reference/

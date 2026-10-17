@@ -4,7 +4,16 @@ import { BRAND, MEGA_MENU_DROPS, MEGA_MENU_COLLECTIONS } from '../data/mockData'
 import { useStore } from '../context/StoreContext';
 
 export default function MegaMenu() {
-  const { isMenuOpen, setIsMenuOpen } = useStore();
+  const { isMenuOpen, setIsMenuOpen, setActiveCategory, setIsSizeChartOpen } = useStore();
+
+  const handleCategoryClick = (catId) => {
+    setActiveCategory(catId);
+    setIsMenuOpen(false);
+    const target = document.getElementById('collection');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -33,65 +42,105 @@ export default function MegaMenu() {
       {/* Main Container */}
       <div className="w-full flex-1 flex flex-col justify-between gap-[2.5vw] pt-4 md:pt-0">
         
-        {/* 1. Categorized Navigation Columns (1:1 with Nishorama) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-9 gap-5 md:gap-[1.2vw] pt-2">
+        {/* 1. Categorized Navigation Columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 md:gap-[2vw] pt-2">
           
-          {/* Column 1: Editorial Drops */}
+          {/* Column 1: Core Categories */}
           <div className="flex flex-col gap-2 md:gap-[0.7vw]">
+            <h4 className="font-heading font-black text-xs md:text-[0.8vw] text-[#482922] uppercase tracking-wider">
+              Core Categories
+            </h4>
             <ul className="space-y-1.5 md:space-y-[0.6vw]">
-              {MEGA_MENU_DROPS.map((drop) => (
-                <li key={drop.name} className="flex items-center gap-1.5">
-                  <a
-                    href={drop.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="font-heading text-xs md:text-[0.78vw] font-bold text-[#482922] uppercase tracking-wider hover:opacity-70 transition-opacity"
+              {[
+                { id: 'all', name: 'All 22 Pieces' },
+                { id: 'most-wanted', name: 'Most Wanted' },
+                { id: 'coord-sets', name: 'Co-ord Sets' },
+                { id: 'kurtis', name: 'Kurtis & Suits' },
+                { id: 'festive', name: 'Festive Collection' },
+                { id: 'dresses', name: 'Dresses & Maxis' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleCategoryClick(item.id)}
+                    className="font-heading text-xs md:text-[0.78vw] font-bold text-[#482922] uppercase tracking-wider hover:opacity-70 transition-opacity text-left cursor-pointer"
                   >
-                    {drop.name}
-                  </a>
-                  {drop.discount && (
-                    <span className="bg-[#ebebeb] text-[#482922] text-[9px] md:text-[0.58vw] font-bold px-1.5 py-0.5 rounded font-heading">
-                      {drop.discount}
-                    </span>
-                  )}
+                    {item.name}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Columns 2-9: Categories & Subcategories */}
-          {MEGA_MENU_COLLECTIONS.map((col) => (
-            <div key={col.category} className="flex flex-col gap-2 md:gap-[0.6vw]">
-              <h4 className="font-heading font-extrabold text-xs md:text-[0.78vw] text-[#482922] uppercase tracking-wider">
-                {col.category}
-              </h4>
-              <ul className="space-y-1 md:space-y-[0.45vw]">
-                {col.items.map((item) => (
-                  <li key={item.name} className="flex items-center gap-1.5">
-                    <a
-                      href="#shop"
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`text-xs md:text-[0.72vw] transition-colors leading-tight ${
-                        item.isBold 
-                          ? 'font-bold italic text-[#482922]' 
-                          : 'text-[#482922]/85 hover:text-[#482922]'
-                      }`}
-                    >
-                      {item.name}
-                    </a>
-                    {item.tag && (
-                      <span className={`text-[8px] md:text-[0.55vw] font-bold px-1 py-0.2 rounded font-heading ${
-                        item.tag === 'Must' 
-                          ? 'bg-[#E11D48] text-white' 
-                          : 'bg-[#FEE500] text-[#482922]'
-                      }`}>
-                        {item.tag}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
+          {/* Column 2: Fabrics & Crafts */}
+          <div className="flex flex-col gap-2 md:gap-[0.6vw]">
+            <h4 className="font-heading font-black text-xs md:text-[0.8vw] text-[#482922] uppercase tracking-wider">
+              Fabrics & Craft
+            </h4>
+            <ul className="space-y-1 md:space-y-[0.45vw] text-xs md:text-[0.72vw] text-[#482922]/85">
+              <li>Pure Cotton Slub</li>
+              <li>Handloom Ikat Weave</li>
+              <li>Chanderi Silk</li>
+              <li>Gold Foil Detailing</li>
+              <li>Fine Organza</li>
+              <li className="font-bold text-[#482922]">100% Breathable Cotton</li>
+            </ul>
+          </div>
+
+          {/* Column 3: Fitting & Size Guide */}
+          <div className="flex flex-col gap-2 md:gap-[0.6vw]">
+            <h4 className="font-heading font-black text-xs md:text-[0.8vw] text-[#482922] uppercase tracking-wider">
+              Fitting & Sizing
+            </h4>
+            <ul className="space-y-1.5 md:space-y-[0.45vw]">
+              <li>
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsSizeChartOpen(true);
+                  }}
+                  className="font-heading text-xs md:text-[0.75vw] font-bold text-[#C5A059] underline hover:text-[#482922] transition-colors cursor-pointer text-left"
+                >
+                  Open Body Size Chart (Inches / CM)
+                </button>
+              </li>
+              <li className="text-xs md:text-[0.72vw] text-[#482922]/80">XXS to XXL Available</li>
+              <li className="text-xs md:text-[0.72vw] text-[#482922]/80">Free WhatsApp Custom Sizing</li>
+              <li className="text-xs md:text-[0.72vw] text-[#482922]/80">Tailored Relaxed Fit</li>
+            </ul>
+          </div>
+
+          {/* Column 4: Studio Info */}
+          <div className="flex flex-col gap-2 md:gap-[0.6vw]">
+            <h4 className="font-heading font-black text-xs md:text-[0.8vw] text-[#482922] uppercase tracking-wider">
+              Cotnera Studio
+            </h4>
+            <ul className="space-y-1 md:space-y-[0.45vw] text-xs md:text-[0.72vw] text-[#482922]/85">
+              <li>By Akanksha & Riya</li>
+              <li>"Wear It. Style It. Rewear It."</li>
+              <li>Handcrafted in India</li>
+              <li className="font-bold text-emerald-700">Special 10% Off Applied</li>
+              <li>1-Click Direct UPI & COD</li>
+            </ul>
+          </div>
+
+          {/* Column 5: Direct Contact */}
+          <div className="flex flex-col gap-2 md:gap-[0.6vw]">
+            <h4 className="font-heading font-black text-xs md:text-[0.8vw] text-[#482922] uppercase tracking-wider">
+              Concierge
+            </h4>
+            <div className="space-y-1 text-xs md:text-[0.72vw] text-[#482922]/85">
+              <p>+91 63979 43289</p>
+              <p>Mon - Sat, 10am - 7pm</p>
+              <a
+                href="https://wa.me/916397943289"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block mt-1 font-bold text-emerald-700 underline"
+              >
+                Chat on WhatsApp →
+              </a>
             </div>
-          ))}
+          </div>
 
         </div>
 

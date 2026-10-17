@@ -30,6 +30,12 @@ export function StoreProvider({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  // Size Chart Modal state
+  const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
+
+  // Active Category Filter for Products
+  const [activeCategory, setActiveCategory] = useState('all');
+
   // Cart operations
   const addToCart = (product, size, quantity = 1) => {
     setCartItems(prev => {
@@ -126,6 +132,10 @@ export function StoreProvider({ children }) {
     setIsMenuOpen,
     isSearchOpen,
     setIsSearchOpen,
+    isSizeChartOpen,
+    setIsSizeChartOpen,
+    activeCategory,
+    setActiveCategory,
   };
 
   return (
