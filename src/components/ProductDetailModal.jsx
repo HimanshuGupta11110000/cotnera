@@ -3,7 +3,6 @@ import {
   X, 
   ChevronLeft, 
   ChevronRight, 
-  Bookmark, 
   Check, 
   MessageCircle, 
   ChevronDown, 
@@ -47,8 +46,7 @@ export default function ProductDetailModal() {
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [selectedSize, setSelectedSize] = useState('S');
   const [measurementUnit, setMeasurementUnit] = useState('inches'); // 'inches' | 'cm'
-  const [isSaved, setIsSaved] = useState(false);
-  const [openAccordion, setOpenAccordion] = useState('details'); // 'details' | 'shipping' | 'returns' | null
+  const [openAccordion, setOpenAccordion] = useState('details'); // 'details' | 'shipping' | null
   const [addedSuccess, setAddedSuccess] = useState(false);
 
   // Reset state when a new product is selected
@@ -204,14 +202,6 @@ export default function ProductDetailModal() {
                     {selectedProduct.style || 'Signature Designer Piece'} • {selectedProduct.color}
                   </p>
                 </div>
-
-                <button
-                  onClick={() => setIsSaved(!isSaved)}
-                  className="p-2 text-neutral-400 hover:text-[#482922] transition-colors cursor-pointer"
-                  aria-label="Save to Wishlist"
-                >
-                  <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-[#482922] text-[#482922]' : ''}`} />
-                </button>
               </div>
 
               {/* Price Row (Matches Nishorama with cut price and 10% discount) */}

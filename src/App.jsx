@@ -2,10 +2,9 @@ import React from 'react';
 import { StoreProvider, useStore } from './context/StoreContext';
 import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
+import NewInsSection from './components/NewInsSection';
+import MobileCategoryGrid from './components/MobileCategoryGrid';
 import GalleryGrid from './components/GalleryGrid';
-import CollectionBanner from './components/CollectionBanner';
-import FitsGallery from './components/FitsGallery';
-import FeaturedCollection from './components/FeaturedCollection';
 import Footer from './components/Footer';
 import MegaMenu from './components/MegaMenu';
 import SearchModal from './components/SearchModal';
@@ -14,11 +13,9 @@ import QuickAddModal from './components/QuickAddModal';
 import UpiCheckoutModal from './components/UpiCheckoutModal';
 import SizeChartModal from './components/SizeChartModal';
 import ProductDetailModal from './components/ProductDetailModal';
-import MobileCategoryGrid from './components/MobileCategoryGrid';
+import CategoryPageView from './components/CategoryPageView';
 import { PRODUCTS } from './data/mockData';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
-
-import CategoryPageView from './components/CategoryPageView';
 
 function Storefront() {
   const { cartCount, setIsCartOpen, setIsMenuOpen, setIsSearchOpen, currentRoute } = useStore();
@@ -38,7 +35,7 @@ function Storefront() {
       {/* Floating Header with Scroll-Driven Flying Logo & Readable Tagline */}
       <Header />
       
-      {/* Main Experience: Collection Page or Full Home Storefront */}
+      {/* Main Experience: Dedicated Collection Page or Clean Sorted Home Storefront */}
       <main className="flex-1">
         {currentRoute?.type === 'collection' ? (
           <CategoryPageView categoryId={currentRoute.category} />
@@ -47,33 +44,14 @@ function Storefront() {
             {/* 1. Full 100vh Cross-Fade Hero Slider with Big Centered Logo overlay */}
             <HeroSlider />
 
-            {/* 2. Infinite Auto-Moving Masonry Lookbook Wall (Clickable tiles open dress PDP) */}
-            <GalleryGrid />
+            {/* 2. New Ins Curated Showcase (4 pieces 1:1 with Nishorama with 'Discover More' capsule) */}
+            <NewInsSection products={PRODUCTS} />
 
-            {/* 3. Nishorama-Style Category Grid (Most Wanted, Co-ord Sets, Kurtis, Festive Collection, Dresses) */}
+            {/* 3. Category Grid (5 Visual Photographic Cards: Most Wanted, Kurtis, Co-ord Sets, Festive Collection, Dresses) */}
             <MobileCategoryGrid />
 
-            {/* 4. Full-Bleed Campaign Banner */}
-            <CollectionBanner
-              title="Cotnera — Festive Elegance '26"
-              buttonText="Explore Collection"
-              link="#collection"
-              image="/images/catalog/IMG-20261017-WA0027.jpg"
-            />
-
-            {/* 5. Curated Fits For You with Capsule Tabs */}
-            <div id="fits">
-              <FitsGallery />
-            </div>
-
-            {/* 6. The Debut Collection Drop (All Products with In-Card Multi-Photo Slider & Size Guide) */}
-            <FeaturedCollection
-              id="collection"
-              title="The Debut Drop"
-              year=""
-              bannerImage="/images/catalog/IMG-20261017-WA0043.jpg"
-              products={PRODUCTS}
-            />
+            {/* 4. Infinite Auto-Moving Masonry Lookbook Wall (Clickable tiles open dress PDP) */}
+            <GalleryGrid />
 
             {/* 7. Brand Values Strip (Direct UPI Pay & WhatsApp Orders) */}
             <div className="w-full px-4 md:px-[1.5vw] pb-10">

@@ -48,19 +48,19 @@ export default function Header() {
   const isHomePage = currentRoute.type === 'home';
 
   // Desktop Logo interpolation:
-  // Starts centered over Hero at top (width 46vw, top 12vw, left 27vw)
-  // Flies smoothly into the top-left menu dock as you scroll (width 12vw, top 1.2vw, left 7.2vw)
+  // Starts centered over Hero at top (width 56vw, top 14.5vw, left 22vw)
+  // Flies smoothly into the top-left menu dock as you scroll (width 12.5vw, top 1.1vw, left 7.2vw)
   const logoWidth = !isHomePage || isMenuOpen
-    ? 12
-    : (46 - (scrollProgress * (46 - 12)));
+    ? 12.5
+    : (56 - (scrollProgress * (56 - 12.5)));
 
   const logoTop = !isHomePage || isMenuOpen
-    ? 1.2
-    : (12 - (scrollProgress * (12 - 1.2)));
+    ? 1.1
+    : (14.5 - (scrollProgress * (14.5 - 1.1)));
 
   const logoLeft = !isHomePage || isMenuOpen
     ? 7.2
-    : (27 - (scrollProgress * (27 - 7.2)));
+    : (22 - (scrollProgress * (22 - 7.2)));
 
   // Logo Color:
   // If menu is open or non-home: always espresso #482922
@@ -258,11 +258,11 @@ export default function Header() {
             <span className="font-heading text-xs font-medium">Menu</span>
           </button>
 
-          <div className="flex flex-col items-center max-w-[55vw]">
-            <button onClick={navigateToHome} className="block w-[32vw] max-w-[130px] focus:outline-none">
+          <div className="flex flex-col items-center justify-center max-w-[55vw]">
+            <button onClick={navigateToHome} className="block w-[38vw] max-w-[155px] focus:outline-none cursor-pointer">
               <CotneraLogo className="w-full h-auto" fill="#482922" />
             </button>
-            <span className="font-heading text-[11px] font-black tracking-[0.14em] uppercase text-[#482922] leading-none mt-1 select-none whitespace-nowrap">
+            <span className="font-heading text-[10px] font-black tracking-[0.14em] uppercase text-[#482922] leading-none mt-1 select-none whitespace-nowrap">
               " WEAR IT. STYLE IT. REWEAR IT. "
             </span>
           </div>
