@@ -11,7 +11,9 @@ export default function Header() {
     setIsMenuOpen, 
     setIsSearchOpen,
     setIsSizeChartOpen,
-    setActiveCategory,
+    navigateToHome,
+    navigateToCollection,
+    currentRoute,
   } = useStore();
 
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -43,26 +45,28 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isHomePage = currentRoute.type === 'home';
+
   // Desktop Logo interpolation:
-  // When menu is open: ALWAYS dock the logo in its small top-left position!
-  // When menu is closed: interpolate smoothly with scrollProgress.
-  const logoWidth = isMenuOpen
-    ? 11.5
-    : (96 - (scrollProgress * (96 - 11.5)));
+  // Starts centered over Hero at top (width 46vw, top 12vw, left 27vw)
+  // Flies smoothly into the top-left menu dock as you scroll (width 12vw, top 1.2vw, left 7.2vw)
+  const logoWidth = !isHomePage || isMenuOpen
+    ? 12
+    : (46 - (scrollProgress * (46 - 12)));
 
-  const logoTop = isMenuOpen
-    ? 1.25
-    : (5.5 - (scrollProgress * (5.5 - 1.25)));
+  const logoTop = !isHomePage || isMenuOpen
+    ? 1.2
+    : (12 - (scrollProgress * (12 - 1.2)));
 
-  const logoLeft = isMenuOpen
+  const logoLeft = !isHomePage || isMenuOpen
     ? 7.2
-    : (2 + (scrollProgress * (7.2 - 2)));
+    : (27 - (scrollProgress * (27 - 7.2)));
 
   // Logo Color:
-  // If menu is open: always espresso #482922
-  // If menu closed: interpolate from #FFFFFF to #482922 as scrollProgress increases
+  // If menu is open or non-home: always espresso #482922
+  // If home & menu closed: interpolate from #FFFFFF to #482922 as scrollProgress increases
   let logoFill = '#482922';
-  if (!isMenuOpen) {
+  if (isHomePage && !isMenuOpen) {
     const r = Math.round(255 - (scrollProgress * (255 - 72)));
     const g = Math.round(255 - (scrollProgress * (255 - 41)));
     const b = Math.round(255 - (scrollProgress * (255 - 34)));
@@ -70,25 +74,25 @@ export default function Header() {
   }
 
   // Transitions: when toggling menu, animate smoothly with CSS; during active scrub, follow scroll directly
-  const logoTransition = isMenuOpen 
+  const logoTransition = isMenuOpen || !isHomePage
     ? 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
     : 'top 0.08s linear, left 0.08s linear, width 0.08s linear, fill 0.3s ease';
 
   // Menu Button offset:
-  // Visible if menu is open OR scrollProgress > 0.25
-  const showMenuButton = isMenuOpen || scrollProgress > 0.25;
+  // Visible if non-home OR menu is open OR scrollProgress > 0.25
+  const showMenuButton = !isHomePage || isMenuOpen || scrollProgress > 0.25;
   const menuTranslateX = showMenuButton ? 0 : -350;
 
   // Top-left Category Pills:
-  // Visible when at top of page and menu is closed
-  const showNavPills = !isMenuOpen && scrollProgress < 0.3;
+  // Visible only when on home page at top of page and menu is closed
+  const showNavPills = isHomePage && !isMenuOpen && scrollProgress < 0.3;
   const navTranslateY = showNavPills ? 0 : -350;
   const navOpacity = showNavPills ? (1 - (scrollProgress / 0.3)) : 0;
 
   // Center Tagline:
   // Centered at left: 50%
-  // Visible when at top (white) OR at bottom (espresso) when menu is closed
-  const showTagline = !isMenuOpen && (scrollProgress < 0.3 || isAtBottom);
+  // Visible on home page when at top (white) OR at bottom (espresso) when menu is closed
+  const showTagline = isHomePage && !isMenuOpen && (scrollProgress < 0.3 || isAtBottom);
   const taglineTranslateY = showTagline ? 0 : -350;
   const taglineOpacity = showTagline ? 1 : 0;
   const taglineColor = isAtBottom ? '#482922' : '#FFFFFF';
@@ -106,12 +110,12 @@ export default function Header() {
             transition: logoTransition,
           }}
         >
-          <a href="/" className="block w-full h-auto cursor-pointer">
+          <button onClick={navigateToHome} className="block w-full h-auto cursor-pointer focus:outline-none">
             <CotneraLogo 
-              className={`w-full h-auto ${scrollProgress < 0.3 && !isMenuOpen ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]' : ''}`} 
+              className={`w-full h-auto ${isHomePage && scrollProgress < 0.3 && !isMenuOpen ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]' : ''}`} 
               fill={logoFill} 
             />
-          </a>
+          </button>
         </div>
       )}
 
@@ -119,12 +123,14 @@ export default function Header() {
       <header className="fixed top-0 left-0 w-full z-[55] pointer-events-none">
         
         {/* DESKTOP HEADER BAR */}
-        <div className="hidden md:flex w-full px-[1.5vw] pt-[1vw] items-center justify-between pointer-events-auto relative">
+        <div className={`hidden md:flex w-full px-[1.5vw] pt-[1vw] pb-[0.8vw] items-center justify-between pointer-events-auto relative transition-all duration-300 ${
+          !isHomePage || scrollProgress > 0.25 ? 'bg-[#F0F0F0]/95 backdrop-blur-md border-b border-neutral-200/60 shadow-xs' : ''
+        }`}>
           
           {/* LEFT: Menu Capsule + Top-Left Category Pills */}
           <div className="flex items-center gap-[0.5vw]">
             
-            {/* Dark Espresso Menu Capsule (Slides in from -350% or stays when menu open) */}
+            {/* Dark Espresso Menu Capsule */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="h-[1.7vw] bg-[#482922] text-white rounded-full px-[0.8vw] flex items-center gap-[0.5vw] cursor-pointer hover:opacity-90 transition-transform duration-400 ease-out focus:outline-none shadow-md z-[65]"
@@ -144,7 +150,7 @@ export default function Header() {
               </span>
             </button>
 
-            {/* Top-Left Frosted Nav Links */}
+            {/* Top-Left Frosted Nav Links (Redirect to dedicated collection pages) */}
             <nav 
               className="flex items-center gap-[0.45vw] transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)]"
               style={{
@@ -153,27 +159,30 @@ export default function Header() {
                 pointerEvents: showNavPills ? 'auto' : 'none'
               }}
             >
-              <a 
-                href="#collection"
-                onClick={() => setActiveCategory('most-wanted')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
+              <button 
+                onClick={() => navigateToCollection('most-wanted')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
               >
                 Most Wanted
-              </a>
-              <a 
-                href="#collection"
-                onClick={() => setActiveCategory('coord-sets')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
+              </button>
+              <button 
+                onClick={() => navigateToCollection('coord-sets')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
               >
                 Co-ord Sets
-              </a>
-              <a 
-                href="#collection"
-                onClick={() => setActiveCategory('festive')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm"
+              </button>
+              <button 
+                onClick={() => navigateToCollection('kurtis')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
+              >
+                Kurtis
+              </button>
+              <button 
+                onClick={() => navigateToCollection('festive')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
               >
                 Festive Edit
-              </a>
+              </button>
               <button 
                 onClick={() => setIsSizeChartOpen(true)}
                 className="h-[1.7vw] px-[0.7vw] bg-[#FAF8F5]/95 backdrop-blur-[20px] border border-[#C5A059] rounded-full text-[#482922] font-heading text-[0.68vw] font-bold flex items-center gap-[0.3vw] hover:bg-white transition-colors shadow-sm cursor-pointer"
@@ -185,7 +194,7 @@ export default function Header() {
 
           </div>
 
-          {/* CENTER: The Signature Animated Tagline in Normal Readable Font */}
+          {/* CENTER: Tagline in Bigger Font (Matches Nishorama style) */}
           <div 
             className="home-page-line absolute left-1/2 pointer-events-none transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)] z-10"
             style={{
@@ -194,7 +203,7 @@ export default function Header() {
             }}
           >
             <p 
-              className="m-0 font-heading text-[0.85vw] font-bold tracking-[0.25em] uppercase select-none transition-colors"
+              className="m-0 font-heading text-[1.1vw] font-bold tracking-[0.24em] uppercase select-none transition-colors"
               style={{
                 color: taglineColor,
                 textShadow: scrollProgress < 0.3 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.5)' : 'none'
@@ -235,7 +244,7 @@ export default function Header() {
 
         </div>
 
-        {/* MOBILE HEADER (Left: Menu, Center: Logo + Readable Tagline, Right: Search + Cart) */}
+        {/* MOBILE HEADER (Left: Menu, Center: Logo + Bigger Readable Tagline, Right: Search + Cart) */}
         <div className="flex md:hidden w-full items-center justify-between px-3 pt-2.5 pb-2 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 pointer-events-auto">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -249,11 +258,11 @@ export default function Header() {
             <span className="font-heading text-xs font-medium">Menu</span>
           </button>
 
-          <div className="flex flex-col items-center max-w-[50vw]">
-            <a href="/" className="block w-[28vw] max-w-[120px]">
+          <div className="flex flex-col items-center max-w-[55vw]">
+            <button onClick={navigateToHome} className="block w-[32vw] max-w-[130px] focus:outline-none">
               <CotneraLogo className="w-full h-auto" fill="#482922" />
-            </a>
-            <span className="font-heading text-[8px] font-bold tracking-[0.12em] uppercase text-[#482922]/85 leading-none mt-1 select-none whitespace-nowrap">
+            </button>
+            <span className="font-heading text-[11px] font-black tracking-[0.14em] uppercase text-[#482922] leading-none mt-1 select-none whitespace-nowrap">
               " WEAR IT. STYLE IT. REWEAR IT. "
             </span>
           </div>

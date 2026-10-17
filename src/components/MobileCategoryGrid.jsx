@@ -30,14 +30,10 @@ const MOBILE_CATEGORIES = [
 ];
 
 export default function MobileCategoryGrid() {
-  const { activeCategory, setActiveCategory } = useStore();
+  const { activeCategory, navigateToCollection } = useStore();
 
   const handleCategorySelect = (categoryId) => {
-    setActiveCategory(categoryId);
-    const target = document.getElementById('collection');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigateToCollection(categoryId);
   };
 
   return (

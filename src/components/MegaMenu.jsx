@@ -4,14 +4,25 @@ import { BRAND, MEGA_MENU_DROPS, MEGA_MENU_COLLECTIONS } from '../data/mockData'
 import { useStore } from '../context/StoreContext';
 
 export default function MegaMenu() {
-  const { isMenuOpen, setIsMenuOpen, setActiveCategory, setIsSizeChartOpen } = useStore();
+  const { 
+    isMenuOpen, 
+    setIsMenuOpen, 
+    setActiveCategory, 
+    setIsSizeChartOpen,
+    navigateToHome,
+    navigateToCollection 
+  } = useStore();
 
   const handleCategoryClick = (catId) => {
-    setActiveCategory(catId);
     setIsMenuOpen(false);
-    const target = document.getElementById('collection');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (catId === 'all') {
+      navigateToHome();
+      const target = document.getElementById('collection');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigateToCollection(catId);
     }
   };
 
@@ -115,11 +126,11 @@ export default function MegaMenu() {
               Cotnera Studio
             </h4>
             <ul className="space-y-1 md:space-y-[0.45vw] text-xs md:text-[0.72vw] text-[#482922]/85">
-              <li>By Akanksha & Riya</li>
               <li>"Wear It. Style It. Rewear It."</li>
               <li>Handcrafted in India</li>
-              <li className="font-bold text-emerald-700">Special 10% Off Applied</li>
-              <li>1-Click Direct UPI & COD</li>
+              <li className="font-bold text-emerald-700">10% OFF on All Pieces</li>
+              <li>Direct UPI & WhatsApp Orders</li>
+              <li>Pure Breathable Cotton</li>
             </ul>
           </div>
 
@@ -129,10 +140,10 @@ export default function MegaMenu() {
               Concierge
             </h4>
             <div className="space-y-1 text-xs md:text-[0.72vw] text-[#482922]/85">
-              <p>+91 63979 43289</p>
-              <p>Mon - Sat, 10am - 7pm</p>
+              <p className="font-bold">24x7 Support</p>
+              <p>{BRAND.phone}</p>
               <a
-                href="https://wa.me/916397943289"
+                href={`https://wa.me/${BRAND.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Cotnera! I have a question regarding products/sizing.')}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block mt-1 font-bold text-emerald-700 underline"
@@ -186,20 +197,20 @@ export default function MegaMenu() {
           </div>
         </div>
 
-        {/* 3. Comprehensive Support & Help Bar (1:1 with Nishorama) */}
-        <div className="border-t border-[#d5d5d5] pt-[1.5vw] pb-[0.5vw] grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-[2vw] text-[#482922]">
+        {/* 3. Support & Direct Help Bar */}
+        <div className="border-t border-[#d5d5d5] pt-[1.5vw] pb-[0.5vw] grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2vw] text-[#482922]">
           
           {/* Order Support Box */}
           <div className="flex flex-col gap-1.5">
-            <span className="font-heading text-xs md:text-[0.75vw] font-bold">Order Support</span>
-            <span className="text-[11px] md:text-[0.68vw] text-neutral-600">Mon to Sat: 10:30 AM - 6:30 PM</span>
+            <span className="font-heading text-xs md:text-[0.75vw] font-bold">24x7 Order Support</span>
+            <span className="text-[11px] md:text-[0.68vw] text-neutral-600">Direct assistance on WhatsApp & Call anytime</span>
             <div className="flex items-center gap-2 mt-1">
               <a 
                 href={`tel:${BRAND.phone}`}
                 className="h-[1.7vw] min-h-[28px] px-3 bg-white border border-[#d5d5d5] rounded-full flex items-center gap-1.5 text-[11px] md:text-[0.68vw] font-heading font-medium hover:bg-neutral-50 transition-colors shadow-sm"
               >
                 <Phone className="w-3 h-3 text-[#482922]" />
-                <span>Call</span>
+                <span>Call {BRAND.phone}</span>
               </a>
               <a 
                 href={`https://wa.me/${BRAND.whatsapp.replace(/[^0-9]/g, '')}`}
@@ -207,50 +218,29 @@ export default function MegaMenu() {
                 rel="noreferrer"
                 className="h-[1.7vw] min-h-[28px] px-3 bg-white border border-[#d5d5d5] rounded-full flex items-center gap-1.5 text-[11px] md:text-[0.68vw] font-heading font-medium hover:bg-neutral-50 transition-colors shadow-sm"
               >
-                <MessageCircle className="w-3 h-3 text-[#482922]" />
-                <span>Chat</span>
+                <MessageCircle className="w-3 h-3 text-emerald-700" />
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
 
-          {/* Returns & Exchanges */}
+          {/* Direct Payment & Orders */}
           <div className="flex flex-col gap-1.5">
-            <span className="font-heading text-xs md:text-[0.75vw] font-bold">Return/Exchange My Order</span>
-            <a href="#return-policy" className="text-[11px] md:text-[0.68vw] text-neutral-600 underline hover:text-[#482922]">
-              Return & Exchange Policy
-            </a>
-            <div className="mt-1">
-              <button 
-                onClick={() => alert('Return request portal opening')}
-                className="h-[1.7vw] min-h-[28px] px-3 bg-white border border-[#d5d5d5] rounded-full text-[11px] md:text-[0.68vw] font-heading font-medium hover:bg-neutral-50 transition-colors shadow-sm"
-              >
-                Submit Request
-              </button>
-            </div>
-          </div>
-
-          {/* Account & FAQs */}
-          <div className="flex flex-col gap-1.5">
-            <span className="font-heading text-xs md:text-[0.75vw] font-bold">Order Status</span>
-            <a href="#orders" className="text-[11px] md:text-[0.68vw] text-neutral-600 hover:text-[#482922] hover:underline">
-              Track Current Order
-            </a>
-            <a href="#faqs" className="text-[11px] md:text-[0.68vw] text-neutral-600 hover:text-[#482922] hover:underline mt-1 font-heading font-semibold">
-              FAQ's
-            </a>
-          </div>
-
-          {/* Help & Policies */}
-          <div className="flex flex-col gap-1">
-            <span className="font-heading text-xs md:text-[0.75vw] font-bold flex items-center gap-1">
-              HELP AND SUPPORT
+            <span className="font-heading text-xs md:text-[0.75vw] font-bold">Direct UPI & WhatsApp Orders</span>
+            <span className="text-[11px] md:text-[0.68vw] text-neutral-600">
+              Pay in 1-click via Google Pay, PhonePe, Paytm, or chat with us on WhatsApp to order directly.
             </span>
-            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] md:text-[0.65vw] text-neutral-600 mt-1">
-              <a href="#privacy" className="hover:underline">Privacy Policy</a>
-              <a href="#terms" className="hover:underline">Terms of Service</a>
-              <a href="#returns" className="hover:underline">Return & Exchange Policy</a>
-              <a href="#shipping" className="hover:underline">Shipping & Delivery Policy</a>
-            </div>
+          </div>
+
+          {/* Social & Studio */}
+          <div className="flex flex-col gap-1">
+            <span className="font-heading text-xs md:text-[0.75vw] font-bold">Cotnera Studio</span>
+            <span className="text-[11px] md:text-[0.68vw] text-neutral-600">
+              Instagram: <a href="https://instagram.com/cotnera__" target="_blank" rel="noreferrer" className="underline font-bold text-[#482922]">@cotnera__</a>
+            </span>
+            <span className="text-[11px] md:text-[0.68vw] text-neutral-600">
+              Handcrafted in India • Pure Breathable Cotton
+            </span>
           </div>
 
         </div>

@@ -36,7 +36,7 @@ export default function FeaturedCollection({ title = "The Debut Drop", year = "(
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent flex items-end justify-between p-6 md:p-[3vw_4vw] text-white">
               <div>
                 <span className="bg-[#F6C582] text-[#482922] px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-heading font-black uppercase tracking-wider mb-2 inline-block">
-                  Special 10% Off Inaugural Drop
+                  10% OFF
                 </span>
                 <h2 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter">
                   {title} <span className="text-sm md:text-lg font-mono font-normal opacity-80">{year}</span>

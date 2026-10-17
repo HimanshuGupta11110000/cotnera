@@ -5,8 +5,6 @@ import {
   ChevronRight, 
   Bookmark, 
   Check, 
-  Truck, 
-  RefreshCw, 
   MessageCircle, 
   ChevronDown, 
   ChevronUp, 
@@ -139,13 +137,6 @@ export default function ProductDetailModal() {
                 </span>
               </div>
 
-              {/* Model Size Check Top/Bottom Banner */}
-              <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
-                <span className="bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-heading font-medium text-neutral-800 shadow-xs">
-                  Model is wearing size XS
-                </span>
-              </div>
-
               <img
                 src={images[activeImageIdx]}
                 alt={`${selectedProduct.name} - view ${activeImageIdx + 1}`}
@@ -234,7 +225,7 @@ export default function ProductDetailModal() {
                   </span>
                 )}
                 <span className="bg-[#482922] text-[#F6C582] text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">
-                  10% OFF INAUGURAL
+                  10% OFF
                 </span>
               </div>
 
@@ -351,19 +342,19 @@ export default function ProductDetailModal() {
                 </button>
               </div>
 
-              {/* Nishorama Trust Badges */}
+              {/* Cotnera Trust Badges */}
               <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-600">
                 <div className="flex items-center gap-1.5">
-                  <Truck className="w-4 h-4 text-[#482922]" />
-                  <span>Cash On Delivery Available</span>
+                  <Zap className="w-4 h-4 text-[#482922]" />
+                  <span>Direct UPI & WhatsApp Orders</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <RefreshCw className="w-4 h-4 text-[#482922]" />
-                  <span>Easy 7 Days Returns</span>
+                  <Sparkles className="w-4 h-4 text-[#482922]" />
+                  <span>Handcrafted Pure Cotton</span>
                 </div>
               </div>
 
-              {/* Accordions: Details, Shipping, Returns, Custom Sizing */}
+              {/* Accordions: Details & Shipping */}
               <div className="mt-5 divide-y divide-neutral-100 border-t border-b border-neutral-100">
                 
                 {/* Details & Description */}
@@ -397,26 +388,8 @@ export default function ProductDetailModal() {
                   {openAccordion === 'shipping' && (
                     <div className="mt-2 text-xs text-neutral-600 leading-relaxed font-sans space-y-1">
                       <p>• Dispatched within 24-48 hours from our studio.</p>
-                      <p>• Free express delivery across India on all prepaid orders.</p>
-                      <p>• Tracking link sent directly to your WhatsApp & SMS upon dispatch.</p>
-                    </div>
-                  )}
-                </div>
-
-                {/* Return & Exchange */}
-                <div className="py-2.5">
-                  <button
-                    onClick={() => toggleAccordion('returns')}
-                    className="w-full flex items-center justify-between text-left font-heading text-xs font-bold uppercase tracking-wider text-[#482922] cursor-pointer"
-                  >
-                    <span>Return & Exchange</span>
-                    {openAccordion === 'returns' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                  </button>
-                  {openAccordion === 'returns' && (
-                    <div className="mt-2 text-xs text-neutral-600 leading-relaxed font-sans space-y-1">
-                      <p>• 7-day hassle-free replacement or size exchange.</p>
-                      <p>• Simple 1-click exchange request directly via WhatsApp concierge.</p>
-                      <p>• Reverse pickup arranged from your doorstep.</p>
+                      <p>• Free express delivery across India on all prepaid UPI orders.</p>
+                      <p>• Direct tracking updates sent to your WhatsApp upon dispatch.</p>
                     </div>
                   )}
                 </div>
@@ -427,14 +400,14 @@ export default function ProductDetailModal() {
               <div className="mt-4 p-3 bg-emerald-50/70 border border-emerald-200 rounded-xl flex items-center justify-between">
                 <div>
                   <h4 className="text-xs font-heading font-bold text-emerald-900">
-                    Need Custom Sizing or Alterations?
+                    Need Custom Sizing or Inquiries?
                   </h4>
                   <p className="text-[11px] text-emerald-700 mt-0.5">
-                    Chat with founders Akanksha & Riya directly on WhatsApp
+                    Chat directly with Cotnera on WhatsApp (24x7)
                   </p>
                 </div>
                 <a
-                  href={`https://wa.me/916397943289?text=${encodeURIComponent(`Hi Akanksha & Riya! I want custom sizing for ${selectedProduct.name} (Code: ${selectedProduct.id})`)}`}
+                  href={`https://wa.me/916397943289?text=${encodeURIComponent(`Hi Cotnera! I want custom sizing / order inquiry for ${selectedProduct.name} (Code: ${selectedProduct.id})`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-heading font-bold flex items-center gap-1 transition-colors cursor-pointer shrink-0"

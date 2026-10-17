@@ -100,10 +100,10 @@ export default function QuickAddModal() {
         {/* Payment Methods Trust Banner */}
         <div className="mt-3 pt-3 border-t border-neutral-200 text-center space-y-1">
           <p className="font-heading font-bold text-[10px] uppercase text-[#482922] tracking-wider">
-            All Payment Methods Accepted:
+            Direct UPI & WhatsApp Orders:
           </p>
           <p className="text-[9px] font-mono text-neutral-600">
-            Google Pay • PhonePe • Paytm • UPI • Cash on Delivery (COD)
+            Google Pay • PhonePe • Paytm • BHIM UPI • WhatsApp Order
           </p>
         </div>
 

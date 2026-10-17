@@ -7,12 +7,11 @@ export const BRAND = {
   upiName: "COTNERA",
   instagram: "https://instagram.com/cotnera__",
   instagramHandle: "@cotnera__",
-  founders: "Akanksha & Riya",
-  supportHours: "Monday to Saturday, 10am to 7pm IST",
+  supportHours: "24x7 Support on Call & WhatsApp",
   address: "Handcrafted with love in India",
   currencySymbol: "₹",
   freeShippingThreshold: 1499,
-  acceptedPayments: "Google Pay, PhonePe, Paytm, all UPI apps, Net Banking & Cash on Delivery (COD)",
+  acceptedPayments: "Direct UPI (Google Pay, PhonePe, Paytm, QR) & WhatsApp Orders",
 };
 
 export const NAV_LINKS = [
@@ -68,11 +67,10 @@ export const MEGA_MENU_COLLECTIONS = [
   {
     category: "COTNERA STUDIO",
     items: [
-      { name: "By Akanksha & Riya" },
       { name: '"Wear It. Style It. Rewear It."' },
       { name: "Handcrafted in India" },
-      { name: "10% Inaugural Drop Discount", isBold: true },
-      { name: "Direct 1-Click UPI & COD" },
+      { name: "10% OFF on all pieces", isBold: true },
+      { name: "Direct UPI & WhatsApp Orders" },
       { name: "Custom Sizing on WhatsApp" },
     ],
   },

@@ -238,12 +238,13 @@ export default function CartDrawer() {
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
-            {/* Secondary Checkout CTA (Cash On Delivery Flow) */}
+            {/* Secondary Checkout CTA (Direct WhatsApp Order) */}
             <button
-              onClick={() => openCheckout('COD')}
-              className="w-full border border-[#482922] bg-white text-[#482922] hover:bg-neutral-50 py-2.5 px-4 font-heading text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer rounded-lg active:scale-[0.99]"
+              onClick={() => proceedToWhatsAppOrder()}
+              className="w-full border border-emerald-600 bg-emerald-50/60 text-emerald-800 hover:bg-emerald-100 py-2.5 px-4 font-heading text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer rounded-lg active:scale-[0.99]"
             >
-              <span>Pay Cash on Delivery (COD)</span>
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Order Directly on WhatsApp</span>
             </button>
 
             {/* Trust Badges */}

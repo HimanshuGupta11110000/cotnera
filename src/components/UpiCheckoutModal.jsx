@@ -127,8 +127,8 @@ export default function UpiCheckoutModal() {
         message += `📝 *Payment Status:* Paid via UPI App / Verified\n`;
       }
     } else {
-      message += `💳 *Payment Method:* Cash on Delivery (COD)\n`;
-      message += `📝 *Payment Status:* To be paid at doorstep\n`;
+      message += `💬 *Payment Method:* Direct WhatsApp Order\n`;
+      message += `📝 *Payment Status:* Order placed with Cotnera WhatsApp Concierge\n`;
     }
 
     message += `\n📍 *DELIVERY ADDRESS:*\n`;
@@ -413,20 +413,20 @@ export default function UpiCheckoutModal() {
 
                 <button
                   type="button"
-                  onClick={() => setPaymentMode('COD')}
+                  onClick={() => setPaymentMode('WHATSAPP')}
                   className={`p-3 text-left rounded-xl border transition-all cursor-pointer ${
-                    paymentMode === 'COD'
+                    paymentMode === 'WHATSAPP'
                       ? 'border-[#482922] bg-[#FAF8F5] ring-2 ring-[#482922]/20'
                       : 'border-neutral-200 hover:border-neutral-300 bg-white'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-heading font-black text-xs uppercase text-[#482922]">
-                      Cash on Delivery
+                      WhatsApp Order
                     </span>
-                    <Truck className="w-3.5 h-3.5 text-neutral-600" />
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
                   </div>
-                  <p className="text-[10px] text-neutral-500 mt-1">Pay upon arrival at doorstep</p>
+                  <p className="text-[10px] text-neutral-500 mt-1">Direct concierge assistance & ordering</p>
                 </button>
               </div>
 
@@ -570,30 +570,30 @@ export default function UpiCheckoutModal() {
                 </div>
               )}
 
-              {/* PAYMENT OPTION B: CASH ON DELIVERY */}
-              {paymentMode === 'COD' && (
+              {/* PAYMENT OPTION B: WHATSAPP DIRECT ORDER */}
+              {paymentMode === 'WHATSAPP' && (
                 <div className="space-y-4">
                   <div className="bg-[#FAF8F5] border border-[#E9E4DC] p-5 rounded-xl space-y-3">
                     <div className="flex items-center gap-2 text-emerald-800 font-heading font-bold text-xs uppercase">
-                      <CheckCircle2 className="w-4 h-4" />
-                      <span>Zero Advance Prepayment Required</span>
+                      <MessageCircle className="w-4 h-4 text-emerald-600" />
+                      <span>Direct WhatsApp Order Concierge</span>
                     </div>
                     <p className="text-xs text-neutral-600 leading-relaxed">
-                      You can pay ₹{cartSubtotal} directly in cash or via UPI to our delivery executive when your parcel arrives at your doorstep.
+                      Place your order for ₹{cartSubtotal} directly with Cotnera on WhatsApp. We will assist you with sizing, custom tailoring requests, and order confirmation.
                     </p>
                     <div className="border-t border-neutral-200 pt-3 text-[11px] text-neutral-500 space-y-1">
-                      <p>• Estimated domestic delivery: 3-5 business days.</p>
-                      <p>• Our studio team will WhatsApp you prior to dispatch to re-confirm size & address.</p>
+                      <p>• 24x7 Direct Support on Call & WhatsApp.</p>
+                      <p>• Fast order routing with instant personal confirmation.</p>
                     </div>
                   </div>
 
                   <button
                     type="button"
                     onClick={handleCompleteOrder}
-                    className="w-full bg-[#482922] hover:bg-black text-white py-3.5 px-4 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all rounded-xl shadow-md cursor-pointer active:scale-[0.99]"
+                    className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 px-4 font-heading text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all rounded-xl shadow-md cursor-pointer active:scale-[0.99]"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white/20" />
-                    <span>Confirm Cash on Delivery Order via WhatsApp</span>
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Send Order to WhatsApp Concierge</span>
                   </button>
                 </div>
               )}
@@ -604,7 +604,7 @@ export default function UpiCheckoutModal() {
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   100% Secure Payment
                 </span>
-                <span>Direct Designer Support</span>
+                <span>Direct Studio Support</span>
                 <span>Handcrafted in India</span>
               </div>
 
@@ -626,7 +626,7 @@ export default function UpiCheckoutModal() {
                   Order ID: {orderId}
                 </p>
                 <p className="text-xs text-neutral-600 max-w-sm mx-auto mt-2 leading-relaxed">
-                  Thank you for supporting handcrafted Indian craft! We have routed your order receipt directly to founders Akanksha & Riya on WhatsApp for confirmation and tracking.
+                  Thank you for supporting handcrafted Indian craft! We have routed your order receipt directly to Cotnera on WhatsApp for confirmation and tracking.
                 </p>
               </div>
 
@@ -638,7 +638,7 @@ export default function UpiCheckoutModal() {
                 </div>
                 <div className="flex justify-between text-neutral-600">
                   <span>Payment Mode:</span>
-                  <span>{paymentMode === 'UPI' ? 'Direct UPI' : 'Cash on Delivery'}</span>
+                  <span>{paymentMode === 'UPI' ? 'Direct UPI' : 'WhatsApp Direct Order'}</span>
                 </div>
                 <div className="flex justify-between text-neutral-600">
                   <span>Shipping To:</span>

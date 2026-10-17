@@ -18,8 +18,10 @@ import MobileCategoryGrid from './components/MobileCategoryGrid';
 import { PRODUCTS } from './data/mockData';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
 
+import CategoryPageView from './components/CategoryPageView';
+
 function Storefront() {
-  const { cartCount, setIsCartOpen, setIsMenuOpen, setIsSearchOpen } = useStore();
+  const { cartCount, setIsCartOpen, setIsMenuOpen, setIsSearchOpen, currentRoute } = useStore();
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F0F0F0] text-[#482922] selection:bg-[#482922] selection:text-white pb-14 sm:pb-0">
@@ -36,82 +38,86 @@ function Storefront() {
       {/* Floating Header with Scroll-Driven Flying Logo & Readable Tagline */}
       <Header />
       
-      {/* Main Experience */}
+      {/* Main Experience: Collection Page or Full Home Storefront */}
       <main className="flex-1">
-        
-        {/* 1. Full 100vh Cross-Fade Hero Slider with Big Centered Logo overlay */}
-        <HeroSlider />
+        {currentRoute?.type === 'collection' ? (
+          <CategoryPageView categoryId={currentRoute.category} />
+        ) : (
+          <>
+            {/* 1. Full 100vh Cross-Fade Hero Slider with Big Centered Logo overlay */}
+            <HeroSlider />
 
-        {/* 2. Infinite Auto-Moving Masonry Lookbook Wall */}
-        <GalleryGrid />
+            {/* 2. Infinite Auto-Moving Masonry Lookbook Wall (Clickable tiles open dress PDP) */}
+            <GalleryGrid />
 
-        {/* 3. Nishorama-Style Category Grid (Most Wanted, Co-ord Sets, Kurtis, Festive Collection, Dresses) */}
-        <MobileCategoryGrid />
+            {/* 3. Nishorama-Style Category Grid (Most Wanted, Co-ord Sets, Kurtis, Festive Collection, Dresses) */}
+            <MobileCategoryGrid />
 
-        {/* 4. Full-Bleed Campaign Banner */}
-        <CollectionBanner
-          title="Cotnera — Festive Elegance '26"
-          buttonText="Explore Collection"
-          link="#collection"
-          image="/images/catalog/IMG-20261017-WA0027.jpg"
-        />
+            {/* 4. Full-Bleed Campaign Banner */}
+            <CollectionBanner
+              title="Cotnera — Festive Elegance '26"
+              buttonText="Explore Collection"
+              link="#collection"
+              image="/images/catalog/IMG-20261017-WA0027.jpg"
+            />
 
-        {/* 5. Curated Fits For You with Capsule Tabs */}
-        <div id="fits">
-          <FitsGallery />
-        </div>
-
-        {/* 6. The Debut Collection Drop (All 22 Products with In-Card Multi-Photo Slider & Size Guide) */}
-        <FeaturedCollection
-          id="collection"
-          title="The Debut Drop"
-          year="(2026)"
-          bannerImage="/images/catalog/IMG-20261017-WA0043.jpg"
-          products={PRODUCTS}
-        />
-
-        {/* 6. Brand Values & All Payment Methods Acceptance Strip */}
-        <div className="w-full px-4 md:px-[1.5vw] pb-10">
-          <div className="w-full bg-[#FAF8F5] border border-[#E9E4DC] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-[2.5vw_3vw] grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-xs">
-            <div className="flex flex-col items-center">
-              <span className="text-xl md:text-2xl mb-1.5">💳</span>
-              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
-                All Payments Accepted
-              </h4>
-              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
-                Google Pay, PhonePe, Paytm, all UPI apps & Cash on Delivery (COD)
-              </p>
+            {/* 5. Curated Fits For You with Capsule Tabs */}
+            <div id="fits">
+              <FitsGallery />
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xl md:text-2xl mb-1.5">✨</span>
-              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
-                Direct 1-Click UPI Pay
-              </h4>
-              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
-                Zero gateway fees • Dynamic QR codes & instant WhatsApp dispatch
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xl md:text-2xl mb-1.5">🌿</span>
-              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
-                Pure Cotton & Handloom
-              </h4>
-              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
-                Handcrafted in India by designers Akanksha & Riya
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xl md:text-2xl mb-1.5">💬</span>
-              <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
-                WhatsApp Concierge
-              </h4>
-              <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
-                Direct order tracking & custom sizing at +91 63979 43289
-              </p>
-            </div>
-          </div>
-        </div>
 
+            {/* 6. The Debut Collection Drop (All Products with In-Card Multi-Photo Slider & Size Guide) */}
+            <FeaturedCollection
+              id="collection"
+              title="The Debut Drop"
+              year=""
+              bannerImage="/images/catalog/IMG-20261017-WA0043.jpg"
+              products={PRODUCTS}
+            />
+
+            {/* 7. Brand Values Strip (Direct UPI Pay & WhatsApp Orders) */}
+            <div className="w-full px-4 md:px-[1.5vw] pb-10">
+              <div className="w-full bg-[#FAF8F5] border border-[#E9E4DC] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-[2.5vw_3vw] grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-xs">
+                <div className="flex flex-col items-center">
+                  <span className="text-xl md:text-2xl mb-1.5">⚡</span>
+                  <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                    Direct 1-Click UPI Pay
+                  </h4>
+                  <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                    Google Pay, PhonePe, Paytm, BHIM & all UPI apps
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xl md:text-2xl mb-1.5">💬</span>
+                  <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                    WhatsApp Orders
+                  </h4>
+                  <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                    Order directly via chat & request custom measurements
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xl md:text-2xl mb-1.5">🌿</span>
+                  <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                    Pure Cotton & Handloom
+                  </h4>
+                  <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                    Handcrafted in India with 100% breathable natural fabrics
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xl md:text-2xl mb-1.5">✨</span>
+                  <h4 className="font-heading font-black text-xs md:text-[0.8vw] uppercase tracking-wider text-[#482922]">
+                    24x7 Customer Support
+                  </h4>
+                  <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
+                    Call & WhatsApp anytime at +91 63979 43289
+                  </p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </main>
 
       {/* 6. Editorial Watermark Footer */}
