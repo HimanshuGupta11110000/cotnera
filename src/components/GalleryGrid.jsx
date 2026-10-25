@@ -13,7 +13,7 @@ const GALLERY_SETS = [
   {
     item1: { img: "/images/catalog/IMG-20261017-WA0030.jpg", prodId: "prod-noir-vest-trousers", title: "Noir Black Peplum Set" },
     item2: { img: "/images/catalog/IMG-20261017-WA0029.jpg", prodId: "prod-prism-coord", title: "Prism Geometric Co-ord" },
-    item3: { img: "/images/catalog/IMG-20261017-WA0041.jpg", prodId: "prod-mustard-polka-gown", title: "Mustard Polka Festive Gown" },
+    item3: { img: "/images/catalog/dress-yellow-polka-front.jpg", prodId: "prod-mustard-polka-gown", title: "Basanti Yellow Polka Dress" },
     item4: { img: "/images/catalog/IMG-20261017-WA0053.jpg", prodId: "prod-baby-pink-anarkali", title: "Gulabo Baby Pink Anarkali" },
     item5: { img: "/images/catalog/IMG-20261018-WA0010.jpg", prodId: "prod-blue-chevron-halter-top", title: "Indus Blue Chevron Halter Top" },
   }

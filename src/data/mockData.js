@@ -92,9 +92,9 @@ export const CATEGORIES = [
   { id: "anarkali", name: "Anarkali", count: "(2)" },
   { id: "coord-sets", name: "Co-ord Sets", count: "(9)" },
   { id: "farshi-salwar", name: "Farshi Salwar", count: "(2)" },
+  { id: "dresses", name: "Dresses", count: "(3)" },
   { id: "most-wanted", name: "Most Wanted", count: "(8)" },
   { id: "festive", name: "Festive Collection", count: "(7)" },
-  { id: "dresses", name: "Dresses", count: "(4)" },
 ];
 
 export const STORIES = [
@@ -405,7 +405,7 @@ export const PRODUCTS = [
   {
     id: "prod-denim-halter",
     name: "Denim Chambray Halter Dress & Set",
-    category: "dresses",
+    category: "most-wanted",
     featuredCategory: "most-wanted",
     color: "Indigo Chambray",
     originalPrice: 2499,
@@ -443,21 +443,22 @@ export const PRODUCTS = [
   },
   {
     id: "prod-mustard-polka-gown",
-    name: "Mustard Polka & Gold Halter Festive Gown",
-    category: "festive",
-    featuredCategory: "festive",
-    color: "Mustard Yellow",
-    originalPrice: 1800,
-    price: 1620, // 10% discount: 1800 * 0.9 = 1620
-    badge: "Festive Edit",
+    name: "Basanti Yellow Polka Dot One-Shoulder Flared Midi Dress",
+    category: "dresses",
+    featuredCategory: "dresses",
+    color: "Buttercup Yellow & Onyx Polka",
+    originalPrice: 2499,
+    price: 2249, // 10% discount: 2499 * 0.9 = 2249
+    badge: "10% OFF",
     images: [
-      "/images/catalog/IMG-20261017-WA0041.jpg",
+      "/images/catalog/dress-yellow-polka-front.jpg",
+      "/images/catalog/dress-yellow-polka-back.jpg",
     ],
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
-    style: "Festive Halter Gown",
-    fabric: "Cotton Slub with Gold Accents",
-    fit: "Fitted bodice with flared silhouette",
-    description: "Festive flared anarkali gown in vibrant mustard with delicate polka accents, golden piping and handcrafted dori back ties.",
+    style: "One-Shoulder Flared Midi Dress",
+    fabric: "100% Breathable Fine Indian Cotton",
+    fit: "Asymmetrical one-shoulder neckline with draped scarf tie & voluminous flared skirt",
+    description: "Joyous retro charm meets modern resort elegance. Crafted in sunny buttercup yellow cotton with bold onyx polka dots, featuring an architectural one-shoulder neckline, attached flowing neck scarf, cinched gathered waist, and an expansive twirl-worthy flared midi skirt.",
   },
   {
     id: "prod-indigo-peplum-kurti",
@@ -672,8 +673,8 @@ export const PRODUCTS = [
   {
     id: "prod-beige-wrap-set",
     name: "Beige Wrap Short-Sleeve Top & Trouser Set",
-    category: "dresses",
-    featuredCategory: "dresses",
+    category: "most-wanted",
+    featuredCategory: "most-wanted",
     color: "Warm Sand / Beige",
     originalPrice: 2499,
     price: 2249, // 10% discount: 2499 * 0.9 = 2249
@@ -689,21 +690,22 @@ export const PRODUCTS = [
   },
   {
     id: "prod-royal-blue-gown",
-    name: "Royal Blue Halter Staircase Evening Gown",
+    name: "Neelam Indigo Floral Halter Staircase Evening Gown",
     category: "dresses",
     featuredCategory: "dresses",
-    color: "Royal Sapphire Blue",
+    color: "Indigo Sapphire & Botanical Motif",
     originalPrice: 2699,
     price: 2429, // 10% discount: 2699 * 0.9 = 2429
-    badge: "Evening Luxe",
+    badge: "10% OFF",
     images: [
-      "/images/catalog/IMG-20261017-WA0037.jpg",
+      "/images/catalog/dress-sapphire-halter-front.jpg",
+      "/images/catalog/dress-sapphire-halter-back.jpg",
     ],
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
-    style: "Floor-length Halter Gown",
-    fabric: "Rich Drape Cotton Satin",
-    fit: "Fitted neckline with sweeping skirt",
-    description: "Floor-length royal sapphire blue halter neck gown. Flattering silhouette crafted for cocktail evenings and wedding festivities.",
+    style: "Halter Choker Column Evening Gown",
+    fabric: "100% Pure Indian Handblock Printed Cotton",
+    fit: "Choker neck with long draped streamers, open corset back & column maxi fall",
+    description: "Sophisticated bohemian evening couture. Rendered in rich indigo sapphire with subtle tonal floral motifs. Features a statement choker neckline with long trailing fabric streamers, backless silhouette with lace-up corset ties, and an elongated fluid maxi fall.",
   },
   {
     id: "prod-sky-blue-lehenga",
@@ -744,21 +746,22 @@ export const PRODUCTS = [
   },
   {
     id: "prod-navy-garden-dress",
-    name: "Navy Blue Garden Tiered Maxi Dress",
+    name: "Nocturne Navy Corset-Bodice Garden Midi Dress",
     category: "dresses",
     featuredCategory: "dresses",
-    color: "Midnight Navy",
-    originalPrice: 1899,
-    price: 1709, // 10% discount: 1899 * 0.9 = 1709
-    badge: "Garden Tiered",
+    color: "Midnight Navy Blue",
+    originalPrice: 2599,
+    price: 2339, // 10% discount: 2599 * 0.9 = 2339
+    badge: "10% OFF",
     images: [
-      "/images/catalog/IMG-20261017-WA0034.jpg",
+      "/images/catalog/dress-navy-garden-front.jpg",
+      "/images/catalog/dress-navy-garden-back.jpg",
     ],
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
-    style: "Tiered Maxi Dress",
-    fabric: "100% Breathable Fine Cotton",
-    fit: "Deep V sleeveless bodice with tiered skirt",
-    description: "Effortless sleeveless tier dress in deep midnight navy cotton. Multiple gathering tiers create fluid movement for outdoor brunches and vacations.",
+    style: "Corset-Bodice Flared Garden Dress",
+    fabric: "100% Pure Structured Cotton Poplin",
+    fit: "Deep sweetheart bodice with bow tie & lace-up corset back",
+    description: "Romantic cottagecore elegance in deep midnight navy. Designed with a plunging sweetheart neckline, delicate front bust tie, structured boned corset bodice, adjustable criss-cross lace-up back, and a full flowing pleated skirt with hidden side pockets.",
   },
   {
     id: "prod-baby-pink-anarkali",
@@ -973,8 +976,8 @@ export const PRODUCTS = [
   {
     id: "prod-monochrome-jumpsuit",
     name: "Monochrome Geometric Sleeveless Jumpsuit",
-    category: "dresses",
-    featuredCategory: "dresses",
+    category: "most-wanted",
+    featuredCategory: "most-wanted",
     color: "Black & Cream",
     originalPrice: 2599,
     price: 2339, // 10% discount: 2599 * 0.9 = 2339

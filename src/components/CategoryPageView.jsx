@@ -60,10 +60,10 @@ const CATEGORY_METADATA = {
     description: 'Floor-sweeping anarkali gowns, traditional kalidars with deep back detailing, and voluminous handblock lehengas for joyous celebrations.',
   },
   'dresses': {
-    title: 'Dresses & Maxis',
-    tagline: 'Fluid Silhouettes for Sunshine Days & Evenings',
-    banner: '/images/catalog/IMG-20261017-WA0037.jpg',
-    description: 'Flattering halter maxis, tiered garden gowns, and modern geometric jumpsuits crafted in light-as-air natural cotton.',
+    title: 'Dresses & Gowns',
+    tagline: 'One-Shoulder Polkas, Corset-Bodice Midis & Halter Evening Gowns',
+    banner: '/images/catalog/dress-yellow-polka-front.jpg',
+    description: 'Breezy architectural silhouettes tailored in pure breathable Indian cotton: one-shoulder flared dresses with neck scarf draping, romantic boned corset garden midis, and trailing halter evening gowns.',
   },
   'all': {
     title: 'All Pieces',
