@@ -171,11 +171,11 @@ export default function MegaMenu() {
             <div className="pointer-events-none absolute right-0 top-0 h-full w-[10vw] bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          {/* Middle: Serene Editorial Silhouette (49% width) */}
+          {/* Middle: Pure Cotton Field & Harvest (49% width) */}
           <div className="relative h-full w-[49%] overflow-hidden flex-shrink-0">
             <img 
-              src="/menu-editorial-serene.jpg" 
-              alt="Pure Cotton Kasavu Editorial" 
+              src="/menu-cotton-field.jpg" 
+              alt="Pure Cotton Field & Harvest" 
               className="w-full h-full object-cover block"
               loading="lazy"
             />
