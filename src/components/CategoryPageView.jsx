@@ -5,6 +5,12 @@ import { CATEGORIES, PRODUCTS } from '../data/mockData';
 import ProductCard from './ProductCard';
 
 const CATEGORY_METADATA = {
+  'trouser': {
+    title: 'Tailored Trousers',
+    tagline: 'High-Waisted, Fluid Wide-Leg Silhouettes',
+    banner: '/images/catalog/trouser-navy-front.jpg',
+    description: 'Impeccably tailored wide-leg trousers featuring sharp front pleats, concealed closures, and premium structured drape for effortless day-to-evening styling.',
+  },
   'kurtis': {
     title: 'Kurtis & Suits',
     tagline: 'Handcrafted in 100% Breathable Indian Cotton',

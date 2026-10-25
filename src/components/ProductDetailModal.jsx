@@ -119,8 +119,8 @@ export default function ProductDetailModal() {
           {/* ================= LEFT / CENTER: IMAGE GALLERY (55%) ================= */}
           <div className="md:col-span-7 bg-[#FBF9F6] p-4 sm:p-6 flex flex-col justify-between relative border-b md:border-b-0 md:border-r border-neutral-200">
             
-            {/* Main Stage Image */}
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-xs bg-neutral-100 select-none">
+            {/* Main Stage Image (Full visibility - Zero cropping) */}
+            <div className="relative aspect-[3/4] w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-xs bg-[#EAE8E4] flex items-center justify-center select-none">
               
               {/* Top Chips */}
               <div className="absolute top-3 left-3 z-10 flex flex-wrap gap-1.5 pointer-events-none">
@@ -138,7 +138,7 @@ export default function ProductDetailModal() {
               <img
                 src={images[activeImageIdx]}
                 alt={`${selectedProduct.name} - view ${activeImageIdx + 1}`}
-                className="w-full h-full object-cover object-top transition-all duration-300"
+                className="w-full h-full object-contain object-center transition-all duration-300"
               />
 
               {/* Slider Arrows (only if multiple images) */}
@@ -180,7 +180,7 @@ export default function ProductDetailModal() {
                         : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="thumbnail" className="w-full h-full object-cover object-top" />
+                    <img src={img} alt="thumbnail" className="w-full h-full object-contain object-center bg-[#EAE8E4]" />
                   </button>
                 ))}
               </div>

@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
       {/* Product Image Container with Rounded Corners (Nishorama borderless style) */}
       <div 
         onClick={handleCardClick}
-        className="relative aspect-[3/4] overflow-hidden rounded-2xl md:rounded-[1.5rem] bg-neutral-100 cursor-pointer shadow-xs"
+        className="relative aspect-[3/4] overflow-hidden rounded-2xl md:rounded-[1.5rem] bg-[#EAE8E4] cursor-pointer shadow-xs flex items-center justify-center"
       >
         {/* Top-Left Badge (New In / Bestseller) */}
         {product.badge && (
@@ -49,12 +49,12 @@ export default function ProductCard({ product }) {
           </span>
         </div>
 
-        {/* Main Product Image */}
+        {/* Main Product Image (Full visibility - Zero cropping) */}
         <img
           src={images[currentImageIndex]}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-contain object-center transition-transform duration-300"
         />
 
         {/* Slider Navigation Arrows - STRICTLY SHOWN ONLY IF MULTIPLE IMAGES EXIST */}

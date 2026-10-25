@@ -15,6 +15,7 @@ export const BRAND = {
 };
 
 export const NAV_LINKS = [
+  { name: "Trousers", href: "#collection" },
   { name: "Most Wanted", href: "#collection" },
   { name: "Co-ord Sets", href: "#collection" },
   { name: "Kurtis", href: "#collection" },
@@ -23,6 +24,7 @@ export const NAV_LINKS = [
 ];
 
 export const MEGA_MENU_DROPS = [
+  { name: "TROUSERS", href: "#collection" },
   { name: "MOST WANTED", href: "#collection" },
   { name: "CO-ORD SETS", href: "#collection" },
   { name: "KURTIS & PALAZZO", href: "#collection" },
@@ -35,7 +37,8 @@ export const MEGA_MENU_COLLECTIONS = [
   {
     category: "SECTIONS",
     items: [
-      { name: "Most Wanted", isBold: true },
+      { name: "Trousers", isBold: true },
+      { name: "Most Wanted" },
       { name: "Co-ord Sets" },
       { name: "Kurtis & Suits" },
       { name: "Festive Collection" },
@@ -77,7 +80,8 @@ export const MEGA_MENU_COLLECTIONS = [
 ];
 
 export const CATEGORIES = [
-  { id: "all", name: "All Pieces", count: "(27)" },
+  { id: "all", name: "All Pieces", count: "(31)" },
+  { id: "trouser", name: "Trousers", count: "(4)" },
   { id: "most-wanted", name: "Most Wanted", count: "(8)" },
   { id: "coord-sets", name: "Co-ord Sets", count: "(12)" },
   { id: "kurtis", name: "Kurtis", count: "(5)" },
@@ -138,6 +142,85 @@ export const STORIES = [
 
 // All clustered products from real shoot photos & WhatsApp chat prices (Cut price -> 10% discount)
 export const PRODUCTS = [
+  {
+    id: "prod-tailored-wide-leg-trouser-navy",
+    name: "Midnight Navy Tailored Wide-Leg Trousers",
+    category: "trouser",
+    featuredCategory: "trouser",
+    color: "Midnight Navy Blue",
+    originalPrice: 1999,
+    price: 1799,
+    badge: "New Drop",
+    images: [
+      "/images/catalog/trouser-navy-front.jpg",
+      "/images/catalog/trouser-navy-back.jpg",
+      "/images/catalog/trouser-navy-detail.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "High-Waisted Wide-Leg Trousers",
+    fabric: "Premium Structured Suiting Twill",
+    fit: "High-rise pleated front with relaxed wide-leg drape",
+    description: "Impeccably tailored wide-leg trousers in rich midnight navy. Features clean front knife pleats, slant pockets, a refined extended waistband tab closure, and welt back detailing.",
+  },
+  {
+    id: "prod-tailored-wide-leg-trouser-white",
+    name: "Crisp White Tailored Wide-Leg Trousers",
+    category: "trouser",
+    featuredCategory: "trouser",
+    color: "Crisp Optical White",
+    originalPrice: 1999,
+    price: 1799,
+    badge: "New Drop",
+    images: [
+      "/images/catalog/trouser-white-front.jpg",
+      "/images/catalog/trouser-white-back.jpg",
+      "/images/catalog/trouser-white-detail.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "High-Waisted Wide-Leg Trousers",
+    fabric: "Structured Breathable Cotton Twill",
+    fit: "High-rise tailored waist with flowing straight wide-leg cut",
+    description: "Signature crisp white tailored trousers designed for effortless luxury. Cut from opaque structured cotton twill with deep front knife pleats and clean back welt lines.",
+  },
+  {
+    id: "prod-tailored-wide-leg-trouser-black",
+    name: "Onyx Black Tailored Wide-Leg Trousers",
+    category: "trouser",
+    featuredCategory: "trouser",
+    color: "Deep Onyx Black",
+    originalPrice: 1999,
+    price: 1799,
+    badge: "New Drop",
+    images: [
+      "/images/catalog/trouser-black-front.jpg",
+      "/images/catalog/trouser-black-back.jpg",
+      "/images/catalog/trouser-black-detail.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "High-Waisted Wide-Leg Trousers",
+    fabric: "High-Density Tailored Cotton Slub",
+    fit: "Flattering high-waisted fit with sweeping wide leg",
+    description: "The quintessential power trouser in pitch black. Tailored with front knife pleats, belt loops, side entry pockets, and an elongated wide-leg silhouette that pairs with everything.",
+  },
+  {
+    id: "prod-tailored-wide-leg-trouser-cream",
+    name: "Vanilla Cream Tailored Wide-Leg Trousers",
+    category: "trouser",
+    featuredCategory: "trouser",
+    color: "Warm Vanilla Cream",
+    originalPrice: 1999,
+    price: 1799,
+    badge: "New Drop",
+    images: [
+      "/images/catalog/trouser-cream-front.jpg",
+      "/images/catalog/trouser-cream-back.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "High-Waisted Wide-Leg Trousers",
+    fabric: "Rich Cream Natural Cotton Weave",
+    fit: "High rise with structured waistband & relaxed wide-leg fall",
+    description: "Understated neutral luxury. Rendered in a soothing vanilla cream palette with clean front pleating, tailored waistband, and a fluid relaxed silhouette.",
+  },
   {
     id: "prod-denim-halter",
     name: "Denim Chambray Halter Dress & Set",

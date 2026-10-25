@@ -114,7 +114,7 @@ export default function SearchModal() {
                     <img 
                       src={p.images[0]} 
                       alt={p.name}
-                      className="w-16 h-20 object-cover bg-neutral-100" 
+                      className="w-16 h-20 object-contain object-center bg-[#EAE8E4] rounded" 
                     />
                     <div className="flex flex-col justify-center">
                       <h4 className="font-heading text-xs font-bold uppercase text-brand-dark group-hover:underline">

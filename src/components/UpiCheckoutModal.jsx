@@ -241,7 +241,7 @@ export default function UpiCheckoutModal() {
                         key={idx} 
                         src={item.product.images[0]} 
                         alt={item.product.name} 
-                        className="w-10 h-12 object-cover rounded-md border-2 border-white shadow-xs bg-neutral-100"
+                        className="w-10 h-12 object-contain rounded-md border-2 border-white shadow-xs bg-[#EAE8E4]"
                       />
                     ))}
                   </div>

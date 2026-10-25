@@ -5,6 +5,7 @@ import { Ruler, Sparkles } from 'lucide-react';
 
 const CATEGORY_TABS = [
   { id: 'all', label: 'All Pieces' },
+  { id: 'trouser', label: 'Trousers' },
   { id: 'most-wanted', label: 'Most Wanted' },
   { id: 'coord-sets', label: 'Co-ord Sets' },
   { id: 'kurtis', label: 'Kurtis' },

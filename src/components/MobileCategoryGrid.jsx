@@ -3,29 +3,34 @@ import { useStore } from '../context/StoreContext';
 
 const MOBILE_CATEGORIES = [
   {
-    id: 'most-wanted',
-    title: 'Most wanted',
-    image: '/images/catalog/IMG-20261018-WA0010.jpg', // Blue chevron halter top on model (identical to Nishorama's Most Wanted)
+    id: 'trouser',
+    title: 'Trousers',
+    image: '/images/catalog/trouser-navy-front.jpg',
   },
   {
-    id: 'kurtis',
-    title: 'Kurtis',
-    image: '/images/catalog/IMG-20261017-WA0042.jpg', // Peach floral kurti on model
+    id: 'most-wanted',
+    title: 'Most wanted',
+    image: '/images/catalog/IMG-20261018-WA0010.jpg',
   },
   {
     id: 'coord-sets',
     title: 'Co-ord Sets',
-    image: '/images/catalog/IMG-20261017-WA0032.jpg', // Beige tailored vest & trouser set
+    image: '/images/catalog/IMG-20261017-WA0032.jpg',
+  },
+  {
+    id: 'kurtis',
+    title: 'Kurtis',
+    image: '/images/catalog/IMG-20261017-WA0042.jpg',
   },
   {
     id: 'festive',
     title: 'Festive Collection',
-    image: '/images/catalog/IMG-20261018-WA0035.jpg', // Surya rust orange anarkali gown on model
+    image: '/images/catalog/IMG-20261018-WA0035.jpg',
   },
   {
     id: 'dresses',
     title: 'Dresses',
-    image: '/images/catalog/IMG-20261017-WA0037.jpg', // Royal blue halter staircase gown on model
+    image: '/images/catalog/IMG-20261017-WA0037.jpg',
   },
 ];
 
@@ -38,19 +43,16 @@ export default function MobileCategoryGrid() {
 
   return (
     <section className="w-full px-3 md:px-[1.5vw] py-4 md:py-8">
-      {/* 2-column grid on mobile (Nishorama 1:1), 5-column on desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-2.5 sm:gap-3.5 md:gap-4">
-        {MOBILE_CATEGORIES.map((cat, idx) => {
-          const isFifth = idx === 4;
+      {/* 2-column grid on mobile, 3-col on tablet, 6-column on desktop */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3.5 md:gap-4">
+        {MOBILE_CATEGORIES.map((cat) => {
           const isSelected = activeCategory === cat.id;
 
           return (
             <div
               key={cat.id}
               onClick={() => handleCategorySelect(cat.id)}
-              className={`group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer select-none transition-all duration-300 ${
-                isFifth ? 'col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[3/4]' : 'aspect-[3/4]'
-              } ${
+              className={`group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer select-none transition-all duration-300 aspect-[3/4] ${
                 isSelected 
                   ? 'ring-2 ring-[#482922] scale-[0.99]' 
                   : 'hover:scale-[1.01]'

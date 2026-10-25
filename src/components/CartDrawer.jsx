@@ -113,7 +113,7 @@ export default function CartDrawer() {
                       onClick={() => setQuickAddProduct(item)}
                       className="border border-brand-border bg-white p-2 cursor-pointer hover:border-brand-dark transition-colors group"
                     >
-                      <img src={item.images[0]} alt={item.name} className="w-full h-24 object-cover" />
+                      <img src={item.images[0]} alt={item.name} className="w-full h-24 object-contain bg-[#EAE8E4]" />
                       <p className="font-heading text-[11px] font-bold uppercase truncate mt-1.5 group-hover:underline">
                         {item.name}
                       </p>
@@ -135,7 +135,7 @@ export default function CartDrawer() {
                   <img 
                     src={item.product.images[0]} 
                     alt={item.product.name}
-                    className="w-20 h-24 object-cover bg-neutral-100 flex-shrink-0" 
+                    className="w-20 h-24 object-contain bg-[#EAE8E4] flex-shrink-0" 
                   />
 
                   {/* Details */}

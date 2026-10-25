@@ -48,7 +48,7 @@ export default function QuickAddModal() {
           <img 
             src={quickAddProduct.images ? quickAddProduct.images[0] : quickAddProduct.image} 
             alt={quickAddProduct.name}
-            className="w-16 h-20 object-cover bg-neutral-100 border border-brand-border rounded-lg" 
+            className="w-16 h-20 object-contain bg-[#EAE8E4] border border-brand-border rounded-lg" 
           />
           <div className="text-xs text-brand-muted">
             <p>Fits true to size.</p>

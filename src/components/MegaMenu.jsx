@@ -63,7 +63,8 @@ export default function MegaMenu() {
             </h4>
             <ul className="space-y-1.5 md:space-y-[0.6vw]">
               {[
-                { id: 'all', name: 'All 22 Pieces' },
+                { id: 'all', name: 'All Pieces' },
+                { id: 'trouser', name: 'Trousers' },
                 { id: 'most-wanted', name: 'Most Wanted' },
                 { id: 'coord-sets', name: 'Co-ord Sets' },
                 { id: 'kurtis', name: 'Kurtis & Suits' },

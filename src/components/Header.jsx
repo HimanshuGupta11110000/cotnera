@@ -180,6 +180,12 @@ export default function Header() {
               }}
             >
               <button 
+                onClick={() => navigateToCollection('trouser')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
+              >
+                Trousers
+              </button>
+              <button 
                 onClick={() => navigateToCollection('most-wanted')}
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
               >
