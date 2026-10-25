@@ -116,6 +116,22 @@ export default function Header() {
               fill={logoFill} 
             />
           </button>
+
+          {/* Authentic Logo Descriptor: PREMIUM COTTON WEAR */}
+          {isHomePage && scrollProgress < 0.25 && !isMenuOpen && (
+            <div 
+              className="mt-[0.9vw] flex items-center justify-center gap-[1.2vw] transition-opacity duration-300 pointer-events-none select-none"
+              style={{ opacity: Math.max(0, 1 - (scrollProgress / 0.18)) }}
+            >
+              <span className="h-[1px] w-[4vw] bg-white/70"></span>
+              <span className="text-[0.8vw] text-[#F6C582] select-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
+              <span className="font-heading font-bold text-[0.88vw] tracking-[0.35em] uppercase text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                Premium Cotton Wear
+              </span>
+              <span className="text-[0.8vw] text-[#F6C582] select-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
+              <span className="h-[1px] w-[4vw] bg-white/70"></span>
+            </div>
+          )}
         </div>
       )}
 
@@ -213,13 +229,27 @@ export default function Header() {
             </p>
           </div>
 
-          {/* RIGHT: Search + Currency + Cart */}
+          {/* RIGHT: Circle Seal + Search + Currency + Cart */}
           <div className="flex items-center gap-[0.5vw]">
+
+            {/* Circle Logo Seal (Like Nishorama's [नी] seal) */}
+            <button
+              onClick={navigateToHome}
+              className="h-[1.7vw] w-[1.7vw] min-w-[28px] min-h-[28px] rounded-full overflow-hidden border border-[#d5d5d5] hover:scale-110 active:scale-95 transition-transform duration-300 shadow-xs cursor-pointer bg-[#2E1810] p-[1.5px] flex items-center justify-center group"
+              title="Cotnera - Premium Cotton Wear"
+              aria-label="Cotnera Seal"
+            >
+              <img 
+                src="/cotnera-dp.jpg" 
+                alt="Cotnera Seal" 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </button>
 
             {/* Search Pill */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="h-[1.7vw] w-[1.7vw] bg-white border border-[#d5d5d5] rounded-full flex items-center justify-center text-[#482922] hover:bg-neutral-50 transition-colors cursor-pointer shadow-sm"
+              className="h-[1.7vw] w-[1.7vw] min-w-[28px] min-h-[28px] bg-white border border-[#d5d5d5] rounded-full flex items-center justify-center text-[#482922] hover:bg-neutral-50 transition-colors cursor-pointer shadow-sm"
               aria-label="Search"
             >
               <Search className="w-[0.8vw] h-[0.8vw] stroke-[1.8]" />
@@ -244,36 +274,50 @@ export default function Header() {
 
         </div>
 
-        {/* MOBILE HEADER (Left: Menu, Center: Logo + Bigger Readable Tagline, Right: Search + Cart) */}
-        <div className="flex md:hidden w-full items-center justify-between px-3 pt-2.5 pb-2 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 pointer-events-auto">
+        {/* MOBILE HEADER (Left: Menu, Center: Logo + Readable Tagline, Right: Circle Logo + Search + Cart) */}
+        <div className="flex md:hidden w-full items-center justify-between px-2.5 pt-2 pb-1.5 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 pointer-events-auto">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="h-8 px-3 bg-[#482922] text-white rounded-full flex items-center gap-1.5 focus:outline-none cursor-pointer"
+            className="h-7 px-2.5 bg-[#482922] text-white rounded-full flex items-center gap-1 focus:outline-none cursor-pointer shrink-0"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
-            <div className="w-3 flex flex-col gap-1 justify-center items-center">
-              <span className={`block w-3 h-[1px] bg-white transition-all ${isMenuOpen ? 'translate-y-[2px] rotate-45' : ''}`}></span>
-              <span className={`block w-3 h-[1px] bg-white transition-all ${isMenuOpen ? '-translate-y-[2px] -rotate-45' : ''}`}></span>
+            <div className="w-2.5 flex flex-col gap-0.5 justify-center items-center">
+              <span className={`block w-2.5 h-[1px] bg-white transition-all ${isMenuOpen ? 'translate-y-[1.5px] rotate-45' : ''}`}></span>
+              <span className={`block w-2.5 h-[1px] bg-white transition-all ${isMenuOpen ? '-translate-y-[1.5px] -rotate-45' : ''}`}></span>
             </div>
-            <span className="font-heading text-xs font-medium">Menu</span>
+            <span className="font-heading text-[10px] font-medium">Menu</span>
           </button>
 
-          <div className="flex flex-col items-center justify-center max-w-[55vw]">
-            <button onClick={navigateToHome} className="block w-[38vw] max-w-[155px] focus:outline-none cursor-pointer">
+          <div className="flex flex-col items-center justify-center shrink-0">
+            <button onClick={navigateToHome} className="block w-[28vw] max-w-[115px] focus:outline-none cursor-pointer">
               <CotneraLogo className="w-full h-auto" fill="#482922" />
             </button>
-            <span className="font-heading text-[10px] font-black tracking-[0.14em] uppercase text-[#482922] leading-none mt-1 select-none whitespace-nowrap">
+            <span className="font-heading text-[7.5px] font-black tracking-[0.14em] uppercase text-[#482922] leading-none mt-0.5 select-none whitespace-nowrap">
               " WEAR IT. STYLE IT. REWEAR IT. "
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5">
-            <button onClick={() => setIsSearchOpen(true)} className="p-1.5 text-[#482922] cursor-pointer" aria-label="Search">
-              <Search className="w-4 h-4" />
+          <div className="flex items-center gap-1 shrink-0">
+            {/* Circle Logo Seal (Mobile) */}
+            <button 
+              onClick={navigateToHome}
+              className="w-6 h-6 rounded-full overflow-hidden border border-[#d5d5d5] p-[0.5px] bg-[#2E1810] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-transform"
+              title="Cotnera"
+              aria-label="Cotnera Seal"
+            >
+              <img 
+                src="/cotnera-dp.jpg" 
+                alt="Cotnera Seal" 
+                className="w-full h-full object-cover rounded-full"
+              />
             </button>
-            <button onClick={() => setIsCartOpen(true)} className="h-8 px-3 bg-neutral-100 border border-neutral-200 rounded-full flex items-center gap-1 text-[#482922] cursor-pointer">
-              <span className="font-heading text-xs font-bold">Cart</span>
-              <span className="text-xs font-bold">{cartCount}</span>
+
+            <button onClick={() => setIsSearchOpen(true)} className="p-1 text-[#482922] cursor-pointer" aria-label="Search">
+              <Search className="w-3.5 h-3.5" />
+            </button>
+            <button onClick={() => setIsCartOpen(true)} className="h-7 px-2 bg-neutral-100 border border-neutral-200 rounded-full flex items-center gap-1 text-[#482922] cursor-pointer">
+              <span className="font-heading text-[10px] font-bold">Cart</span>
+              <span className="text-[10px] font-bold">{cartCount}</span>
             </button>
           </div>
         </div>

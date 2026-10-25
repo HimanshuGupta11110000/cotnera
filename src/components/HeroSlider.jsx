@@ -54,11 +54,20 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* Centered Floating Bottom Pill Button */}
-      <div className="absolute left-1/2 bottom-[8vw] md:bottom-[5vw] -translate-x-1/2 z-20">
+      {/* Centered Floating Bottom Pill Button & Mobile Descriptor */}
+      <div className="absolute left-1/2 bottom-[9vh] md:bottom-[5vw] -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-center pointer-events-auto">
+        {/* Mobile Premium Cotton Badge */}
+        <div className="md:hidden flex items-center gap-2 mb-1 select-none">
+          <span className="h-[1px] w-5 bg-white/70"></span>
+          <span className="text-[10px] font-heading font-black tracking-[0.22em] uppercase text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            ✦ Premium Cotton Wear ✦
+          </span>
+          <span className="h-[1px] w-5 bg-white/70"></span>
+        </div>
+
         <a
           href={HERO_SLIDES[activeSlide].link}
-          className="px-[2rem] py-[0.8rem] md:px-[2.4vw] md:py-[0.7vw] bg-white text-[#482922] font-heading font-semibold text-xs md:text-[0.85vw] rounded-full uppercase tracking-wider shadow-2xl hover:scale-105 transition-transform duration-300 whitespace-nowrap block"
+          className="px-[1.8rem] py-[0.75rem] md:px-[2.4vw] md:py-[0.7vw] bg-white text-[#482922] font-heading font-semibold text-xs md:text-[0.85vw] rounded-full uppercase tracking-wider shadow-2xl hover:scale-105 transition-transform duration-300 whitespace-nowrap block"
         >
           {HERO_SLIDES[activeSlide].ctaText}
         </a>
