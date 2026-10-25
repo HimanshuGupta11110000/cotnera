@@ -46,7 +46,7 @@ export default function HeroSlider() {
         >
           <img
             src={slide.image}
-            alt={slide.ctaText}
+            alt="Cotnera Collection"
             className="w-full h-full object-cover object-center filter brightness-[0.9]"
           />
           {/* Subtle Gradient Vignette */}
@@ -54,27 +54,6 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* Centered Floating Bottom Pill Button & Mobile Descriptor */}
-      <div className="absolute left-1/2 bottom-[9vh] md:bottom-[5vw] -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-center pointer-events-auto">
-        {/* Mobile Premium Cotton Badge: 1 Star in Middle, 2 Lines as Neighbors */}
-        <div className="md:hidden flex flex-col items-center gap-1 mb-1 select-none">
-          <div className="flex items-center gap-2">
-            <span className="h-[1px] w-6 bg-white/70"></span>
-            <span className="text-[10px] text-[#F6C582] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
-            <span className="h-[1px] w-6 bg-white/70"></span>
-          </div>
-          <span className="text-[10px] font-heading font-black tracking-[0.24em] uppercase text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-            Premium Cotton Wear
-          </span>
-        </div>
-
-        <a
-          href={HERO_SLIDES[activeSlide].link}
-          className="px-[1.8rem] py-[0.75rem] md:px-[2.4vw] md:py-[0.7vw] bg-white text-[#482922] font-heading font-semibold text-xs md:text-[0.85vw] rounded-full uppercase tracking-wider shadow-2xl hover:scale-105 transition-transform duration-300 whitespace-nowrap block"
-        >
-          {HERO_SLIDES[activeSlide].ctaText}
-        </a>
-      </div>
 
       {/* Pagination Dots */}
       <div className="absolute bottom-[3vh] left-0 w-full flex justify-center gap-2 z-20">

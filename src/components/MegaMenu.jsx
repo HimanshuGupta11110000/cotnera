@@ -160,8 +160,8 @@ export default function MegaMenu() {
           {/* Left: Artisan Handcrafting (25% width) */}
           <div className="relative h-full w-[25%] overflow-hidden flex-shrink-0">
             <img 
-              src="/menu-image-1.png" 
-              alt="Artisan Block-Printing Craft" 
+              src="/menu-craft-artisan.jpg" 
+              alt="Indian Cotton Handcraft & Block-Printing" 
               className="w-full h-full object-cover block"
               loading="lazy"
             />
@@ -171,11 +171,11 @@ export default function MegaMenu() {
             <div className="pointer-events-none absolute right-0 top-0 h-full w-[10vw] bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          {/* Middle: Lotus Serenity Water Lily Edit (49% width) */}
+          {/* Middle: Serene Editorial Silhouette (49% width) */}
           <div className="relative h-full w-[49%] overflow-hidden flex-shrink-0">
             <img 
-              src="/menu-image-2.png" 
-              alt="Lotus Serenity Edit" 
+              src="/menu-editorial-serene.jpg" 
+              alt="Pure Cotton Kasavu Editorial" 
               className="w-full h-full object-cover block"
               loading="lazy"
             />
@@ -185,11 +185,11 @@ export default function MegaMenu() {
             <div className="pointer-events-none absolute right-0 top-0 h-full w-[15vw] bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          {/* Right: Handcrafted Pure Dyed Silhouettes (24.5% width) */}
+          {/* Right: Handcrafted Dyed Cotton Textiles (24.5% width) */}
           <div className="relative h-full w-[24.5%] overflow-hidden flex-shrink-0">
             <img 
-              src="/menu-image-3.png" 
-              alt="Handcrafted Pure Dyed Fabric" 
+              src="/menu-textile-drying.jpg" 
+              alt="Handcrafted Dyed Cotton Textiles" 
               className="w-full h-full object-cover block"
               loading="lazy"
             />
