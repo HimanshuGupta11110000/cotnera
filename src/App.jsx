@@ -4,7 +4,6 @@ import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
 import NewInsSection from './components/NewInsSection';
 import MobileCategoryGrid from './components/MobileCategoryGrid';
-import GalleryGrid from './components/GalleryGrid';
 import Footer from './components/Footer';
 import MegaMenu from './components/MegaMenu';
 import SearchModal from './components/SearchModal';
@@ -50,10 +49,7 @@ function Storefront() {
             {/* 3. Category Grid (5 Visual Photographic Cards: Most Wanted, Kurtis, Co-ord Sets, Festive Collection, Dresses) */}
             <MobileCategoryGrid />
 
-            {/* 4. Infinite Auto-Moving Masonry Lookbook Wall (Clickable tiles open dress PDP) */}
-            <GalleryGrid />
-
-            {/* 7. Brand Values Strip (Direct UPI Pay & WhatsApp Orders) */}
+            {/* 4. Brand Values Strip (Direct UPI Pay & WhatsApp Orders) */}
             <div className="w-full px-4 md:px-[1.5vw] pb-10">
               <div className="w-full bg-[#FAF8F5] border border-[#E9E4DC] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-[2.5vw_3vw] grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-xs">
                 <div className="flex flex-col items-center">

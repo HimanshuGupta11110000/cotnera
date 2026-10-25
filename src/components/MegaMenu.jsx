@@ -50,8 +50,8 @@ export default function MegaMenu() {
           : 'opacity-0 pointer-events-none [clip-path:inset(0_0_100%_0)]'
       }`}
     >
-      {/* Main Container */}
-      <div className="w-full flex-1 flex flex-col justify-between gap-[2.5vw] pt-4 md:pt-0">
+      {/* Main Container: White Editorial Card like Nishorama header-menu-main */}
+      <div className="w-full bg-white rounded-[1rem] md:rounded-[1.5rem] p-5 md:p-[1.8vw] shadow-xs flex flex-col justify-between gap-[1.5vw]">
         
         {/* 1. Categorized Navigation Columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 md:gap-[2vw] pt-2">
@@ -155,50 +155,54 @@ export default function MegaMenu() {
 
         </div>
 
-        {/* 2. Middle Editorial Visual Strip (3 lookbook images like Nishorama) */}
-        <div className="hidden md:grid grid-cols-3 gap-[1.5vw] my-[1vw]">
-          <div className="relative h-[18vw] rounded-[1.5vw] overflow-hidden group shadow-sm bg-neutral-200">
+        {/* 2. Middle Editorial Visual Strip (Nishorama 1:1 Merging Effect with Feathered Gradients) */}
+        <div className="hidden md:flex w-full h-[22vw] min-h-[200px] max-h-[290px] gap-[1%] my-[1vw] relative overflow-hidden bg-white select-none">
+          {/* Left: Artisan Handcrafting (25% width) */}
+          <div className="relative h-full w-[25%] overflow-hidden flex-shrink-0">
             <img 
-              src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" 
-              alt="Artisan Craftsmanship" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              src="/menu-image-1.png" 
+              alt="Artisan Block-Printing Craft" 
+              className="w-full h-full object-cover block"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-[1.2vw]">
-              <span className="text-white font-heading text-[0.85vw] font-bold uppercase tracking-wider">
-                Handcrafted Roots
-              </span>
-            </div>
+            {/* Left Edge Dissolve */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-[10vw] bg-gradient-to-r from-white to-transparent" />
+            {/* Right Edge Merging Gradient */}
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-[10vw] bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          <div className="relative h-[18vw] rounded-[1.5vw] overflow-hidden group shadow-sm bg-neutral-200">
+          {/* Middle: Lotus Serenity Water Lily Edit (49% width) */}
+          <div className="relative h-full w-[49%] overflow-hidden flex-shrink-0">
             <img 
-              src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=80" 
-              alt="Lotus Edit" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              src="/menu-image-2.png" 
+              alt="Lotus Serenity Edit" 
+              className="w-full h-full object-cover block"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-[1.2vw]">
-              <span className="text-white font-heading text-[0.85vw] font-bold uppercase tracking-wider">
-                Festive Edit '26
-              </span>
-            </div>
+            {/* Left Merging Gradient */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-[15vw] bg-gradient-to-r from-white to-transparent" />
+            {/* Right Merging Gradient */}
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-[15vw] bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          <div className="relative h-[18vw] rounded-[1.5vw] overflow-hidden group shadow-sm bg-neutral-200">
+          {/* Right: Handcrafted Pure Dyed Silhouettes (24.5% width) */}
+          <div className="relative h-full w-[24.5%] overflow-hidden flex-shrink-0">
             <img 
-              src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80" 
-              alt="Modern Silhouettes" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              src="/menu-image-3.png" 
+              alt="Handcrafted Pure Dyed Fabric" 
+              className="w-full h-full object-cover block"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-[1.2vw]">
-              <span className="text-white font-heading text-[0.85vw] font-bold uppercase tracking-wider">
-                Pure Cotton Silhouettes
-              </span>
-            </div>
+            {/* Left Merging Gradient */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-[10vw] bg-gradient-to-r from-white to-transparent" />
+            {/* Right Edge Dissolve */}
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-[10vw] bg-gradient-to-l from-white to-transparent" />
           </div>
         </div>
+      </div>
 
-        {/* 3. Support & Direct Help Bar */}
-        <div className="border-t border-[#d5d5d5] pt-[1.5vw] pb-[0.5vw] grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2vw] text-[#482922]">
+      {/* 3. Support & Direct Help Bar */}
+      <div className="w-full pt-[1.2vw] pb-[0.5vw] grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[2vw] text-[#482922]">
           
           {/* Order Support Box */}
           <div className="flex flex-col gap-1.5">
@@ -242,10 +246,7 @@ export default function MegaMenu() {
               Handcrafted in India • Pure Breathable Cotton
             </span>
           </div>
-
         </div>
-
       </div>
-    </div>
-  );
-}
+    );
+  }
