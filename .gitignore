@@ -27,3 +27,6 @@ verify-site.js
 test-logo.svg
 reference/
 ig-*.json
+incoming_images/
+incoming_images_archive/
+scratch/

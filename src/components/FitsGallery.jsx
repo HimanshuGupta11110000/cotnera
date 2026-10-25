@@ -15,10 +15,10 @@ const FITS_TABS_DATA = [
   {
     name: 'Co-ord Sets',
     products: [
-      { id: 'prod-beige-vest', name: 'Beige Tailored Vest Set', image: '/images/catalog/IMG-20261017-WA0032.jpg', price: 2249, color: 'Warm Sand', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
-      { id: 'prod-noir-vest', name: 'Noir Black Peplum Set', image: '/images/catalog/IMG-20261017-WA0030.jpg', price: 1709, color: 'Jet Black', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
-      { id: 'prod-sitara-peplum', name: 'Sitara Halter Peplum Set', image: '/images/catalog/IMG-20261017-WA0039.jpg', price: 2339, color: 'Ivory & Gold', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
-      { id: 'prod-prism-coord', name: 'Prism Geometric Co-ord', image: '/images/catalog/IMG-20261017-WA0029.jpg', price: 1980, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-beige-vest-set', name: 'Sahara Sand Tailored Vest Set', image: '/images/catalog/coord-oatmeal-sand-vest-front.jpg', price: 2339, color: 'Warm Sand', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-noir-vest-trousers', name: 'Noir Linen Waistcoat Set', image: '/images/catalog/coord-noir-tailored-vest-front.jpg', price: 2339, color: 'Jet Black', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-coord-green-ikat', name: 'Avani Emerald Ikat Vest & Skirt Set', image: '/images/catalog/coord-green-ikat-front.jpg', price: 2249, color: 'Emerald Green', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-prism-coord', name: 'Prism Abstract Peplum Palazzo Set', image: '/images/catalog/coord-brushstroke-peplum-front.jpg', price: 2249, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
     ]
   },
   {

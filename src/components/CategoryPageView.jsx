@@ -31,9 +31,9 @@ const CATEGORY_METADATA = {
   },
   'coord-sets': {
     title: 'Co-ord Sets',
-    tagline: 'Tailored 2-Piece & 3-Piece Matching Sets',
-    banner: '/images/catalog/IMG-20261017-WA0032.jpg',
-    description: 'Effortlessly polished tailored waistcoats, peplum tops, wrap blouses, and relaxed wide-leg trousers in structured linen and cotton slub.',
+    tagline: 'Tailored Waistcoats, Flared Tunics & Wide-Leg Sets',
+    banner: '/images/catalog/coord-brushstroke-peplum-editorial.jpg',
+    description: 'Effortlessly polished matching sets: handloom ikat waistcoats with slit skirts, Swiss dot flared tunics with corset ties, abstract peplum palazzos, and tailored linen suiting.',
   },
   'most-wanted': {
     title: 'Most Wanted',

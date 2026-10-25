@@ -6,9 +6,10 @@ import { Ruler, Sparkles } from 'lucide-react';
 const CATEGORY_TABS = [
   { id: 'all', label: 'All Pieces' },
   { id: 'trouser', label: 'Trousers' },
-  { id: 'most-wanted', label: 'Most Wanted' },
+  { id: 'kurti', label: 'Kurtis' },
+  { id: 'anarkali', label: 'Anarkali' },
   { id: 'coord-sets', label: 'Co-ord Sets' },
-  { id: 'kurtis', label: 'Kurtis' },
+  { id: 'most-wanted', label: 'Most Wanted' },
   { id: 'festive', label: 'Festive Collection' },
   { id: 'dresses', label: 'Dresses' },
 ];
@@ -19,7 +20,10 @@ export default function FeaturedCollection({ title = "The Debut Drop", year = "(
   const filteredProducts = activeCategory === 'all'
     ? products
     : products.filter(
-        (p) => p.category === activeCategory || p.featuredCategory === activeCategory
+        (p) => {
+          if (activeCategory === 'kurti' || activeCategory === 'kurtis') return p.category === 'kurti';
+          return p.category === activeCategory || p.featuredCategory === activeCategory;
+        }
       );
 
   return (
