@@ -186,10 +186,16 @@ export default function Header() {
                 Trousers
               </button>
               <button 
-                onClick={() => navigateToCollection('most-wanted')}
+                onClick={() => navigateToCollection('kurti')}
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
               >
-                Most Wanted
+                Kurtis
+              </button>
+              <button 
+                onClick={() => navigateToCollection('anarkali')}
+                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
+              >
+                Anarkali
               </button>
               <button 
                 onClick={() => navigateToCollection('coord-sets')}
@@ -197,12 +203,7 @@ export default function Header() {
               >
                 Co-ord Sets
               </button>
-              <button 
-                onClick={() => navigateToCollection('kurtis')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Kurtis
-              </button>
+
               <button 
                 onClick={() => navigateToCollection('festive')}
                 className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"

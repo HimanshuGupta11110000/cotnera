@@ -16,18 +16,20 @@ export const BRAND = {
 
 export const NAV_LINKS = [
   { name: "Trousers", href: "#collection" },
+  { name: "Kurtis", href: "#collection" },
+  { name: "Anarkali", href: "#collection" },
   { name: "Most Wanted", href: "#collection" },
   { name: "Co-ord Sets", href: "#collection" },
-  { name: "Kurtis", href: "#collection" },
   { name: "Festive Collection", href: "#collection" },
   { name: "Dresses", href: "#collection" },
 ];
 
 export const MEGA_MENU_DROPS = [
   { name: "TROUSERS", href: "#collection" },
+  { name: "KURTIS", href: "#collection" },
+  { name: "ANARKALI", href: "#collection" },
   { name: "MOST WANTED", href: "#collection" },
   { name: "CO-ORD SETS", href: "#collection" },
-  { name: "KURTIS & PALAZZO", href: "#collection" },
   { name: "FESTIVE COLLECTION", href: "#collection" },
   { name: "DRESSES & GOWNS", href: "#collection" },
   { name: "SHOP ALL PIECES", href: "#collection" },
@@ -38,9 +40,10 @@ export const MEGA_MENU_COLLECTIONS = [
     category: "SECTIONS",
     items: [
       { name: "Trousers", isBold: true },
+      { name: "Kurtis", isBold: true },
+      { name: "Anarkali", isBold: true },
       { name: "Most Wanted" },
       { name: "Co-ord Sets" },
-      { name: "Kurtis & Suits" },
       { name: "Festive Collection" },
       { name: "Dresses & Maxis" },
       { name: "All Products" },
@@ -80,9 +83,10 @@ export const MEGA_MENU_COLLECTIONS = [
 ];
 
 export const CATEGORIES = [
-  { id: "all", name: "All Pieces", count: "(36)" },
+  { id: "all", name: "All Pieces", count: "(38)" },
   { id: "trouser", name: "Trousers", count: "(4)" },
   { id: "kurti", name: "Kurtis", count: "(5)" },
+  { id: "anarkali", name: "Anarkali", count: "(2)" },
   { id: "most-wanted", name: "Most Wanted", count: "(8)" },
   { id: "coord-sets", name: "Co-ord Sets", count: "(12)" },
   { id: "festive", name: "Festive Collection", count: "(7)" },
@@ -315,6 +319,46 @@ export const PRODUCTS = [
     fabric: "Fine Cotton Mulmul / Sheer Organza & Printed Cotton",
     fit: "Relaxed V-neck tunic with bell sleeves over printed inner bustier",
     description: "Modern Bohemian evening elegance. Lightweight sheer noir overlay tunic with flared bell sleeves and deep V-neck, paired over a coordinating handblock printed cotton bustier with shell detailing.",
+  },
+  {
+    id: "prod-anarkali-surya-terracotta",
+    name: "Surya Terracotta Chanderi Silk Anarkali Set",
+    category: "anarkali",
+    featuredCategory: "anarkali",
+    color: "Terracotta Rust & Burgundy",
+    originalPrice: 4999,
+    price: 4499,
+    badge: "10% OFF",
+    images: [
+      "/images/catalog/anarkali-rust-front.jpg",
+      "/images/catalog/anarkali-rust-back.jpg",
+      "/images/catalog/anarkali-rust-sketch.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "Kalidar Anarkali & Dupatta Set",
+    fabric: "Pure Handloom Chanderi Silk with Organza Dupatta",
+    fit: "Fitted bodice with dramatic flared floor-length kalis",
+    description: "Opulent terracotta rust floor-sweeping Anarkali in pure handloom Chanderi silk. Hand-embroidered zardozi neckline, deep scoop back, paired with a sheer burgundy organza dupatta with botanical needlework.",
+  },
+  {
+    id: "prod-anarkali-gulabi-blush",
+    name: "Gulabi Blush Chanderi Silk Anarkali Set",
+    category: "anarkali",
+    featuredCategory: "anarkali",
+    color: "Blush Rose Pink & Silver",
+    originalPrice: 4999,
+    price: 4499,
+    badge: "10% OFF",
+    images: [
+      "/images/catalog/anarkali-blush-front.jpg",
+      "/images/catalog/anarkali-blush-back.jpg",
+      "/images/catalog/anarkali-blush-sketch.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "Kalidar Anarkali & Dupatta Set",
+    fabric: "Pure Handloom Chanderi Silk with Sheer Dupatta",
+    fit: "Fitted bodice with sweeping flared hem & tassel back tie",
+    description: "Ethereal blush rose pink Anarkali gown crafted from lustrous Chanderi silk. Features intricate silver zardozi beadwork along the neckline, deep scoop back with embellished tassels, and a gossamer embroidered dupatta.",
   },
   {
     id: "prod-denim-halter",

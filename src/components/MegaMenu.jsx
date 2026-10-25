@@ -65,9 +65,10 @@ export default function MegaMenu() {
               {[
                 { id: 'all', name: 'All Pieces' },
                 { id: 'trouser', name: 'Trousers' },
+                { id: 'kurti', name: 'Kurtis' },
+                { id: 'anarkali', name: 'Anarkali' },
                 { id: 'most-wanted', name: 'Most Wanted' },
                 { id: 'coord-sets', name: 'Co-ord Sets' },
-                { id: 'kurti', name: 'Kurtis' },
                 { id: 'festive', name: 'Festive Collection' },
                 { id: 'dresses', name: 'Dresses & Maxis' },
               ].map((item) => (

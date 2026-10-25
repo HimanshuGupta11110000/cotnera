@@ -23,6 +23,12 @@ const CATEGORY_METADATA = {
     banner: '/images/catalog/kurti-pink-hakoba-front.jpg',
     description: 'Explore breezy eyelet hakoba halters, open back block-print tunics, and layered sheer silhouettes crafted for everyday ease and contemporary elegance.',
   },
+  'anarkali': {
+    title: 'Anarkali Sets',
+    tagline: 'Pure Chanderi Silk & Hand-Embroidered Zardozi',
+    banner: '/images/catalog/anarkali-rust-front.jpg',
+    description: 'Floor-sweeping kalidar Anarkali ensembles crafted from pure Chanderi silk, featuring delicate hand-embroidered zardozi necklines, deep scoop backs, and sheer embellished organza dupattas.',
+  },
   'coord-sets': {
     title: 'Co-ord Sets',
     tagline: 'Tailored 2-Piece & 3-Piece Matching Sets',
