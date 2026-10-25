@@ -86,12 +86,12 @@ export const MEGA_MENU_COLLECTIONS = [
 ];
 
 export const CATEGORIES = [
-  { id: "all", name: "All Pieces", count: "(40)" },
+  { id: "all", name: "All Pieces", count: "(41)" },
   { id: "trouser", name: "Trousers", count: "(4)" },
   { id: "kurti", name: "Kurtis", count: "(5)" },
   { id: "anarkali", name: "Anarkali", count: "(2)" },
   { id: "coord-sets", name: "Co-ord Sets", count: "(9)" },
-  { id: "farshi-salwar", name: "Farshi Salwar", count: "(2)" },
+  { id: "farshi-salwar", name: "Farshi Salwar", count: "(3)" },
   { id: "dresses", name: "Dresses", count: "(3)" },
   { id: "most-wanted", name: "Most Wanted", count: "(8)" },
   { id: "festive", name: "Festive Collection", count: "(7)" },
@@ -401,6 +401,25 @@ export const PRODUCTS = [
     fabric: "100% Handblock Printed Indian Cotton",
     fit: "Sweetheart neck tunic with scoop tie-up back, flared farshi salwar & dupatta",
     description: "Timeless heritage charm featuring artisanal indigo blue floral booti handblock prints on crisp white cotton. Styled with a sweetheart neckline, flared cuff sleeves, an alluring scoop back with handmade tassel tie cords, voluminous farshi salwar, and matching azure blue dupatta.",
+  },
+  {
+    id: "prod-farshi-peach-coral",
+    name: "Noorani Peach Coral Booti Farshi Salwar Suit Set",
+    category: "farshi-salwar",
+    featuredCategory: "farshi-salwar",
+    color: "Soft Peach Coral & Ivory",
+    originalPrice: 2899,
+    price: 2609, // 10% discount: 2899 * 0.9 = 2609
+    badge: "10% OFF",
+    images: [
+      "/images/catalog/salwar-peach-coral-front.jpg",
+      "/images/catalog/salwar-peach-coral-back.jpg",
+    ],
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    style: "3-Piece Farshi Salwar Suit Set",
+    fabric: "100% Breathable Fine Indian Cotton with Crochet Lace Insets",
+    fit: "Straight tunic with delicate crochet hem lace, pleated wide farshi salwar & dupatta",
+    description: "Delicate feminine grace in warm peach coral. Features heritage all-over floral booti motifs on breathable pure cotton, crochet lace ladder detailing along the sleeves and hemline, paired with voluminous pleated farshi salwar pants and an airy sheer matching dupatta.",
   },
   {
     id: "prod-denim-halter",
