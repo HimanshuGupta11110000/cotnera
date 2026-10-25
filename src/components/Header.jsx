@@ -79,22 +79,22 @@ export default function Header() {
     : 'top 0.08s linear, left 0.08s linear, width 0.08s linear, fill 0.3s ease';
 
   // Menu Button offset:
-  // Visible if non-home OR menu is open OR scrollProgress > 0.25
-  const showMenuButton = !isHomePage || isMenuOpen || scrollProgress > 0.25;
-  const menuTranslateX = showMenuButton ? 0 : -350;
+  // Visible if non-home OR menu is open OR scrollProgress > 0.22
+  const showMenuButton = !isHomePage || isMenuOpen || scrollProgress > 0.22;
+  const menuTranslateX = showMenuButton ? 0 : -250;
 
   // Top-left Category Pills:
   // Visible only when on home page at top of page and menu is closed
-  const showNavPills = isHomePage && !isMenuOpen && scrollProgress < 0.3;
-  const navTranslateY = showNavPills ? 0 : -350;
-  const navOpacity = showNavPills ? (1 - (scrollProgress / 0.3)) : 0;
+  const showNavPills = isHomePage && !isMenuOpen && scrollProgress < 0.22;
+  const navTranslateY = showNavPills ? 0 : -150;
+  const navOpacity = showNavPills ? (1 - (scrollProgress / 0.22)) : 0;
 
   // Center Tagline:
   // Centered at left: 50%
   // Visible on home page when at top (white) OR at bottom (espresso) when menu is closed
-  const showTagline = isHomePage && !isMenuOpen && (scrollProgress < 0.3 || isAtBottom);
-  const taglineTranslateY = showTagline ? 0 : -350;
-  const taglineOpacity = showTagline ? 1 : 0;
+  const showTagline = isHomePage && !isMenuOpen && (scrollProgress < 0.22 || isAtBottom);
+  const taglineTranslateY = showTagline ? 0 : -150;
+  const taglineOpacity = showTagline ? (isAtBottom ? 1 : Math.max(0, 1 - (scrollProgress / 0.22))) : 0;
   const taglineColor = isAtBottom ? '#482922' : '#FFFFFF';
 
   return (
@@ -144,16 +144,16 @@ export default function Header() {
         
         {/* DESKTOP HEADER BAR */}
         <div className={`hidden md:flex w-full px-[1.5vw] pt-[1vw] pb-[0.8vw] items-center justify-between pointer-events-auto relative transition-all duration-300 ${
-          !isHomePage || scrollProgress > 0.25 ? 'bg-[#F0F0F0]/95 backdrop-blur-md border-b border-neutral-200/60 shadow-xs' : ''
+          !isHomePage || scrollProgress > 0.22 ? 'bg-[#F0F0F0]/95 backdrop-blur-md border-b border-neutral-200/60 shadow-xs' : ''
         }`}>
           
-          {/* LEFT: Menu Capsule + Top-Left Category Pills */}
-          <div className="flex items-center gap-[0.5vw]">
+          {/* LEFT: Menu Capsule + Top Category Pills (Nishorama-style) */}
+          <div className="flex items-center relative">
             
-            {/* Dark Espresso Menu Capsule */}
+            {/* Dark Espresso Menu Capsule (Slides in on scroll) */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="h-[1.7vw] bg-[#482922] text-white rounded-full px-[0.8vw] flex items-center gap-[0.5vw] cursor-pointer hover:opacity-90 transition-transform duration-400 ease-out focus:outline-none shadow-md z-[65]"
+              className="h-[30px] md:h-[1.7vw] bg-[#482922] text-white rounded-full px-3 md:px-[0.8vw] flex items-center gap-1.5 md:gap-[0.5vw] cursor-pointer hover:opacity-90 transition-all duration-300 focus:outline-none shadow-md z-[65]"
               style={{
                 transform: `translateX(${menuTranslateX}%)`,
                 opacity: showMenuButton ? 1 : 0,
@@ -165,80 +165,53 @@ export default function Header() {
                 <span className={`block w-[14px] h-[1px] bg-white transition-all duration-300 ${isMenuOpen ? 'translate-y-[2px] rotate-45' : ''}`}></span>
                 <span className={`block w-[14px] h-[1px] bg-white transition-all duration-300 ${isMenuOpen ? '-translate-y-[2.5px] -rotate-45' : ''}`}></span>
               </div>
-              <span className="font-heading text-[0.7vw] font-medium tracking-wide">
+              <span className="font-heading text-xs md:text-[0.7vw] font-medium tracking-wide">
                 Menu
               </span>
             </button>
 
-            {/* Top-Left Frosted Nav Links (Redirect to dedicated collection pages) */}
+            {/* Top-Left Category Pills (Matches Nishorama Image 1) */}
             <nav 
-              className="flex items-center gap-[0.45vw] transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)]"
+              className="absolute left-0 flex items-center gap-[0.4vw] transition-all duration-300 ease-out z-[64]"
               style={{
                 transform: `translateY(${navTranslateY}%)`,
                 opacity: navOpacity,
                 pointerEvents: showNavPills ? 'auto' : 'none'
               }}
             >
-              <button 
-                onClick={() => navigateToCollection('trouser')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Trousers
-              </button>
-              <button 
-                onClick={() => navigateToCollection('kurti')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Kurtis
-              </button>
-              <button 
-                onClick={() => navigateToCollection('anarkali')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Anarkali
-              </button>
-              <button 
-                onClick={() => navigateToCollection('coord-sets')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Co-ord Sets
-              </button>
-              <button 
-                onClick={() => navigateToCollection('farshi-salwar')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Farshi Salwar
-              </button>
-              <button 
-                onClick={() => navigateToCollection('dresses')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Dresses
-              </button>
-              <button 
-                onClick={() => setIsSizeChartOpen(true)}
-                className="h-[1.7vw] px-[0.7vw] bg-[#FAF8F5]/95 backdrop-blur-[20px] border border-[#C5A059] rounded-full text-[#482922] font-heading text-[0.68vw] font-bold flex items-center gap-[0.3vw] hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                <Ruler className="w-[0.7vw] h-[0.7vw] text-[#C5A059]" />
-                <span>Size Guide</span>
-              </button>
+              {[
+                { id: 'coord-sets', name: 'Co-ord Sets' },
+                { id: 'kurti', name: 'Kurtis' },
+                { id: 'farshi-salwar', name: 'Farshi Salwar' },
+                { id: 'dresses', name: 'Dresses' },
+                { id: 'anarkali', name: 'Anarkali' },
+                { id: 'trouser', name: 'Trousers' },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => navigateToCollection(cat.id)}
+                  className="h-[28px] md:h-[1.7vw] px-3 md:px-[0.75vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5]/80 rounded-full text-[#482922] font-heading text-[11px] md:text-[0.68vw] font-medium flex items-center hover:bg-white hover:border-[#482922]/40 transition-all shadow-xs cursor-pointer whitespace-nowrap"
+                >
+                  {cat.name}
+                </button>
+              ))}
             </nav>
 
           </div>
 
-          {/* CENTER: Tagline in Bigger Font (Matches Nishorama style) */}
+          {/* CENTER: Tagline (Matches Nishorama style) */}
           <div 
-            className="home-page-line absolute left-1/2 pointer-events-none transition-all duration-400 ease-[cubic-bezier(0.48,-0.11,0.54,1)] z-10"
+            className="home-page-line absolute left-1/2 pointer-events-none transition-all duration-300 ease-out z-10"
             style={{
               transform: `translate(-50%, ${taglineTranslateY}%)`,
               opacity: taglineOpacity,
             }}
           >
             <p 
-              className="m-0 font-heading text-[1.1vw] font-bold tracking-[0.24em] uppercase select-none transition-colors"
+              className="m-0 font-heading text-[1.1vw] font-bold tracking-[0.22em] uppercase select-none transition-colors whitespace-nowrap"
               style={{
                 color: taglineColor,
-                textShadow: scrollProgress < 0.3 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.5)' : 'none'
+                textShadow: scrollProgress < 0.22 && !isAtBottom ? '0 1px 8px rgba(0,0,0,0.5)' : 'none'
               }}
             >
               " WEAR IT. STYLE IT. REWEAR IT. "
