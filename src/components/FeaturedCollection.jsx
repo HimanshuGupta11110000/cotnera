@@ -9,6 +9,7 @@ const CATEGORY_TABS = [
   { id: 'kurti', label: 'Kurtis' },
   { id: 'anarkali', label: 'Anarkali' },
   { id: 'coord-sets', label: 'Co-ord Sets' },
+  { id: 'farshi-salwar', label: 'Farshi Salwar' },
   { id: 'most-wanted', label: 'Most Wanted' },
   { id: 'festive', label: 'Festive Collection' },
   { id: 'dresses', label: 'Dresses' },

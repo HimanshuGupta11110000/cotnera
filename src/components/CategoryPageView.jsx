@@ -35,6 +35,18 @@ const CATEGORY_METADATA = {
     banner: '/images/catalog/coord-brushstroke-peplum-editorial.jpg',
     description: 'Effortlessly polished matching sets: handloom ikat waistcoats with slit skirts, Swiss dot flared tunics with corset ties, abstract peplum palazzos, and tailored linen suiting.',
   },
+  'farshi-salwar': {
+    title: 'Farshi Salwar Suits',
+    tagline: 'Regal Awadhi-Inspired Flared 3-Piece Ensembles',
+    banner: '/images/catalog/salwar-sky-yellow-front.jpg',
+    description: 'Regal Awadhi-inspired farshi salwar ensembles featuring sweeping wide-legged flared bottoms, artisanal handblock and embroidered tunics, and coordinating soft cotton dupattas with tassel accents.',
+  },
+  'salwar-suits': {
+    title: 'Farshi Salwar Suits',
+    tagline: 'Regal Awadhi-Inspired Flared 3-Piece Ensembles',
+    banner: '/images/catalog/salwar-sky-yellow-front.jpg',
+    description: 'Regal Awadhi-inspired farshi salwar ensembles featuring sweeping wide-legged flared bottoms, artisanal handblock and embroidered tunics, and coordinating soft cotton dupattas with tassel accents.',
+  },
   'most-wanted': {
     title: 'Most Wanted',
     tagline: 'Cotnera Signature Bestsellers',
@@ -70,6 +82,9 @@ export default function CategoryPageView({ categoryId }) {
     : PRODUCTS.filter(p => {
         if (categoryId === 'kurti' || categoryId === 'kurtis') {
           return p.category === 'kurti';
+        }
+        if (categoryId === 'farshi-salwar' || categoryId === 'salwar-suits') {
+          return p.category === 'farshi-salwar';
         }
         return p.category === categoryId || p.featuredCategory === categoryId;
       });
