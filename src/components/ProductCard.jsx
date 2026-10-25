@@ -33,17 +33,8 @@ export default function ProductCard({ product }) {
         onClick={handleCardClick}
         className="relative aspect-[3/4] overflow-hidden rounded-2xl md:rounded-[1.5rem] bg-[#EAE8E4] cursor-pointer shadow-xs flex items-center justify-center"
       >
-        {/* Top-Left Badge (New In / Bestseller) */}
-        {product.badge && (
-          <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-            <span className="bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-heading font-medium text-[#482922] shadow-xs">
-              {product.badge}
-            </span>
-          </div>
-        )}
-
-        {/* 10% OFF Pill (Top Right) */}
-        <div className="absolute top-2.5 right-2.5 z-10 pointer-events-none">
+        {/* 10% OFF Pill (Top Left) */}
+        <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
           <span className="bg-[#482922] text-[#F6C582] px-2 py-0.5 rounded-full text-[9px] md:text-[11px] font-mono font-bold tracking-tight shadow-xs">
             10% OFF
           </span>

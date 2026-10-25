@@ -122,14 +122,8 @@ export default function ProductDetailModal() {
             {/* Main Stage Image (Full visibility - Zero cropping) */}
             <div className="relative aspect-[3/4] w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-xs bg-[#EAE8E4] flex items-center justify-center select-none">
               
-              {/* Top Chips */}
-              <div className="absolute top-3 left-3 z-10 flex flex-wrap gap-1.5 pointer-events-none">
-                <span className="bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-heading font-medium text-[#482922] shadow-xs">
-                  {selectedProduct.fabric?.includes('Cotton') ? 'Pure Cotton' : 'Handcrafted'}
-                </span>
-                <span className="bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-heading font-medium text-[#482922] shadow-xs">
-                  Slim Fit
-                </span>
+              {/* Top-Left Chip: Only 10% OFF */}
+              <div className="absolute top-3 left-3 z-10 pointer-events-none">
                 <span className="bg-[#482922] text-[#F6C582] px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-mono font-bold tracking-tight shadow-xs">
                   10% OFF
                 </span>
