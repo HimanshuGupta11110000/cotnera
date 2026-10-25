@@ -8,29 +8,29 @@ const MOBILE_CATEGORIES = [
     image: '/images/catalog/trouser-navy-front.jpg',
   },
   {
-    id: 'most-wanted',
-    title: 'Most wanted',
-    image: '/images/catalog/IMG-20261018-WA0010.jpg',
-  },
-  {
-    id: 'coord-sets',
-    title: 'Co-ord Sets',
-    image: '/images/catalog/IMG-20261017-WA0032.jpg',
-  },
-  {
     id: 'kurti',
     title: 'Kurtis',
     image: '/images/catalog/kurti-pink-hakoba-front.jpg',
   },
   {
-    id: 'festive',
-    title: 'Festive Collection',
-    image: '/images/catalog/IMG-20261018-WA0035.jpg',
+    id: 'anarkali',
+    title: 'Anarkali Sets',
+    image: '/images/catalog/anarkali-rust-front.jpg',
+  },
+  {
+    id: 'coord-sets',
+    title: 'Co-ord Sets',
+    image: '/images/catalog/coord-brushstroke-peplum-editorial.jpg',
+  },
+  {
+    id: 'farshi-salwar',
+    title: 'Farshi Salwar',
+    image: '/images/catalog/salwar-sky-yellow-front.jpg',
   },
   {
     id: 'dresses',
     title: 'Dresses',
-    image: '/images/catalog/IMG-20261017-WA0037.jpg',
+    image: '/images/catalog/dress-yellow-polka-front.jpg',
   },
 ];
 

@@ -46,7 +46,7 @@ function Storefront() {
             {/* 2. New Ins Curated Showcase (4 pieces 1:1 with Nishorama with 'Discover More' capsule) */}
             <NewInsSection products={PRODUCTS} />
 
-            {/* 3. Category Grid (5 Visual Photographic Cards: Most Wanted, Kurtis, Co-ord Sets, Festive Collection, Dresses) */}
+            {/* 3. Category Grid (6 Photographic Cards: Trousers, Kurtis, Anarkali, Co-ord Sets, Farshi Salwar, Dresses) */}
             <MobileCategoryGrid />
 
             {/* 4. Brand Values Strip (Direct UPI Pay & WhatsApp Orders) */}

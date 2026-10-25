@@ -215,13 +215,6 @@ export default function Header() {
               >
                 Dresses
               </button>
-
-              <button 
-                onClick={() => navigateToCollection('festive')}
-                className="h-[1.7vw] px-[0.8vw] bg-white/95 backdrop-blur-[20px] border border-[#d5d5d5] rounded-full text-[#482922] font-heading text-[0.7vw] font-medium flex items-center hover:bg-white transition-colors shadow-sm cursor-pointer"
-              >
-                Festive Edit
-              </button>
               <button 
                 onClick={() => setIsSizeChartOpen(true)}
                 className="h-[1.7vw] px-[0.7vw] bg-[#FAF8F5]/95 backdrop-blur-[20px] border border-[#C5A059] rounded-full text-[#482922] font-heading text-[0.68vw] font-bold flex items-center gap-[0.3vw] hover:bg-white transition-colors shadow-sm cursor-pointer"

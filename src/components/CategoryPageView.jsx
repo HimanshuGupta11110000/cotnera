@@ -47,18 +47,6 @@ const CATEGORY_METADATA = {
     banner: '/images/catalog/salwar-sky-yellow-front.jpg',
     description: 'Regal Awadhi-inspired farshi salwar ensembles featuring sweeping wide-legged flared bottoms, artisanal handblock and embroidered tunics, and coordinating soft cotton dupattas with tassel accents.',
   },
-  'most-wanted': {
-    title: 'Most Wanted',
-    tagline: 'Cotnera Signature Bestsellers',
-    banner: '/images/catalog/IMG-20261018-WA0010.jpg',
-    description: 'Our most sought-after silhouettes loved for their versatile cuts, flattering back details, and effortless rewearability.',
-  },
-  'festive': {
-    title: 'Festive Collection',
-    tagline: 'Pure Chanderi Silk, Organza & Handblock Weaves',
-    banner: '/images/catalog/IMG-20261018-WA0035.jpg',
-    description: 'Floor-sweeping anarkali gowns, traditional kalidars with deep back detailing, and voluminous handblock lehengas for joyous celebrations.',
-  },
   'dresses': {
     title: 'Dresses & Gowns',
     tagline: 'One-Shoulder Polkas, Corset-Bodice Midis & Halter Evening Gowns',
@@ -68,7 +56,7 @@ const CATEGORY_METADATA = {
   'all': {
     title: 'All Pieces',
     tagline: 'The Complete Debut Collection',
-    banner: '/images/catalog/IMG-20261017-WA0043.jpg',
+    banner: '/images/catalog/anarkali-rust-front.jpg',
     description: 'Browse the complete range of sustainably crafted Indian cotton and silk garments designed to wear, style, and rewear.',
   }
 };

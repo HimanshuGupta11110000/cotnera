@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 
 const HERO_SLIDES = [
   {
-    image: "/images/catalog/IMG-20261017-WA0039.jpg",
-    ctaText: "The Debut Drop '26",
+    image: "/images/catalog/anarkali-rust-front.jpg",
+    ctaText: "Pure Chanderi Anarkali '26",
     link: "#collection"
   },
   {
-    image: "/images/catalog/IMG-20261017-WA0043.jpg",
-    ctaText: "Denim & Chambray Edit",
-    link: "#collection"
-  },
-  {
-    image: "/images/catalog/IMG-20261017-WA0032.jpg",
+    image: "/images/catalog/coord-brushstroke-peplum-editorial.jpg",
     ctaText: "Tailored Co-ord Sets",
     link: "#collection"
   },
   {
-    image: "/images/catalog/IMG-20261017-WA0027.jpg",
-    ctaText: "Diwali Festive Edit '26",
+    image: "/images/catalog/salwar-sky-yellow-front.jpg",
+    ctaText: "Awadhi Farshi Salwar Suits",
+    link: "#collection"
+  },
+  {
+    image: "/images/catalog/dress-yellow-polka-front.jpg",
+    ctaText: "Pure Cotton Dresses & Gowns",
     link: "#collection"
   }
 ];

@@ -69,8 +69,6 @@ export default function MegaMenu() {
                 { id: 'anarkali', name: 'Anarkali' },
                 { id: 'coord-sets', name: 'Co-ord Sets' },
                 { id: 'farshi-salwar', name: 'Farshi Salwar' },
-                { id: 'most-wanted', name: 'Most Wanted' },
-                { id: 'festive', name: 'Festive Collection' },
                 { id: 'dresses', name: 'Dresses & Maxis' },
               ].map((item) => (
                 <li key={item.id}>
