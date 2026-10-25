@@ -18,9 +18,9 @@ const MOBILE_CATEGORIES = [
     image: '/images/catalog/IMG-20261017-WA0032.jpg',
   },
   {
-    id: 'kurtis',
+    id: 'kurti',
     title: 'Kurtis',
-    image: '/images/catalog/IMG-20261017-WA0042.jpg',
+    image: '/images/catalog/kurti-pink-hakoba-front.jpg',
   },
   {
     id: 'festive',

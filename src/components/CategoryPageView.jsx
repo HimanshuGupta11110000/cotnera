@@ -11,11 +11,17 @@ const CATEGORY_METADATA = {
     banner: '/images/catalog/trouser-navy-front.jpg',
     description: 'Impeccably tailored wide-leg trousers featuring sharp front pleats, concealed closures, and premium structured drape for effortless day-to-evening styling.',
   },
-  'kurtis': {
-    title: 'Kurtis & Suits',
+  'kurti': {
+    title: 'Kurtis & Tunics',
     tagline: 'Handcrafted in 100% Breathable Indian Cotton',
-    banner: '/images/catalog/IMG-20261017-WA0042.jpg',
-    description: 'Explore breezy peplum kurtis, longline silhouettes, and coordinating sharara sets crafted for everyday comfort and celebratory occasions.',
+    banner: '/images/catalog/kurti-pink-hakoba-front.jpg',
+    description: 'Explore breezy eyelet hakoba halters, open back block-print tunics, and layered sheer silhouettes crafted for everyday ease and contemporary elegance.',
+  },
+  'kurtis': {
+    title: 'Kurtis & Tunics',
+    tagline: 'Handcrafted in 100% Breathable Indian Cotton',
+    banner: '/images/catalog/kurti-pink-hakoba-front.jpg',
+    description: 'Explore breezy eyelet hakoba halters, open back block-print tunics, and layered sheer silhouettes crafted for everyday ease and contemporary elegance.',
   },
   'coord-sets': {
     title: 'Co-ord Sets',
@@ -55,7 +61,12 @@ export default function CategoryPageView({ categoryId }) {
   const meta = CATEGORY_METADATA[categoryId] || CATEGORY_METADATA['all'];
   const products = categoryId === 'all'
     ? PRODUCTS
-    : PRODUCTS.filter(p => p.category === categoryId || p.featuredCategory === categoryId);
+    : PRODUCTS.filter(p => {
+        if (categoryId === 'kurti' || categoryId === 'kurtis') {
+          return p.category === 'kurti';
+        }
+        return p.category === categoryId || p.featuredCategory === categoryId;
+      });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

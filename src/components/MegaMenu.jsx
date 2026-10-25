@@ -67,7 +67,7 @@ export default function MegaMenu() {
                 { id: 'trouser', name: 'Trousers' },
                 { id: 'most-wanted', name: 'Most Wanted' },
                 { id: 'coord-sets', name: 'Co-ord Sets' },
-                { id: 'kurtis', name: 'Kurtis & Suits' },
+                { id: 'kurti', name: 'Kurtis' },
                 { id: 'festive', name: 'Festive Collection' },
                 { id: 'dresses', name: 'Dresses & Maxis' },
               ].map((item) => (
