@@ -117,19 +117,23 @@ export default function Header() {
             />
           </button>
 
-          {/* Authentic Logo Descriptor: PREMIUM COTTON WEAR */}
+          {/* Authentic Logo Descriptor: 1 Star in Middle, 2 Lines as Neighbors */}
           {isHomePage && scrollProgress < 0.25 && !isMenuOpen && (
             <div 
-              className="mt-[0.9vw] flex items-center justify-center gap-[1.2vw] transition-opacity duration-300 pointer-events-none select-none"
+              className="mt-[0.9vw] flex flex-col items-center justify-center gap-[0.45vw] transition-opacity duration-300 pointer-events-none select-none"
               style={{ opacity: Math.max(0, 1 - (scrollProgress / 0.18)) }}
             >
-              <span className="h-[1px] w-[4vw] bg-white/70"></span>
-              <span className="text-[0.8vw] text-[#F6C582] select-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
-              <span className="font-heading font-bold text-[0.88vw] tracking-[0.35em] uppercase text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              {/* Divider: 1 Star in middle, 2 lines in neighbor */}
+              <div className="flex items-center justify-center gap-[1.2vw]">
+                <span className="h-[1px] w-[5.5vw] bg-white/70"></span>
+                <span className="text-[0.9vw] text-[#F6C582] select-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
+                <span className="h-[1px] w-[5.5vw] bg-white/70"></span>
+              </div>
+
+              {/* Descriptor text */}
+              <span className="font-heading font-bold text-[0.88vw] tracking-[0.38em] uppercase text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
                 Premium Cotton Wear
               </span>
-              <span className="text-[0.8vw] text-[#F6C582] select-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
-              <span className="h-[1px] w-[4vw] bg-white/70"></span>
             </div>
           )}
         </div>

@@ -56,13 +56,16 @@ export default function HeroSlider() {
 
       {/* Centered Floating Bottom Pill Button & Mobile Descriptor */}
       <div className="absolute left-1/2 bottom-[9vh] md:bottom-[5vw] -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-center pointer-events-auto">
-        {/* Mobile Premium Cotton Badge */}
-        <div className="md:hidden flex items-center gap-2 mb-1 select-none">
-          <span className="h-[1px] w-5 bg-white/70"></span>
-          <span className="text-[10px] font-heading font-black tracking-[0.22em] uppercase text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-            ✦ Premium Cotton Wear ✦
+        {/* Mobile Premium Cotton Badge: 1 Star in Middle, 2 Lines as Neighbors */}
+        <div className="md:hidden flex flex-col items-center gap-1 mb-1 select-none">
+          <div className="flex items-center gap-2">
+            <span className="h-[1px] w-6 bg-white/70"></span>
+            <span className="text-[10px] text-[#F6C582] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">✦</span>
+            <span className="h-[1px] w-6 bg-white/70"></span>
+          </div>
+          <span className="text-[10px] font-heading font-black tracking-[0.24em] uppercase text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            Premium Cotton Wear
           </span>
-          <span className="h-[1px] w-5 bg-white/70"></span>
         </div>
 
         <a
