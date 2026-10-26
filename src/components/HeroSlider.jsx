@@ -2,32 +2,38 @@ import React, { useState, useEffect } from 'react';
 
 const HERO_SLIDES = [
   {
-    image: "/images/hero/hero-anarkali-landscape.jpg",
+    desktopImage: "/images/hero/hero-anarkali-landscape.jpg",
+    mobileImage: "/images/catalog/anarkali-rust-front.jpg",
     ctaText: "Pure Chanderi Anarkali '26",
     link: "#collection"
   },
   {
-    image: "/images/hero/hero-coord-landscape.jpg",
+    desktopImage: "/images/hero/hero-coord-landscape.jpg",
+    mobileImage: "/images/catalog/coord-green-ikat-front.jpg",
     ctaText: "Tailored Co-ord Sets",
     link: "#collection"
   },
   {
-    image: "/images/hero/hero-farshi-landscape.jpg",
+    desktopImage: "/images/hero/hero-farshi-landscape.jpg",
+    mobileImage: "/images/catalog/salwar-sky-yellow-front.jpg",
     ctaText: "Awadhi Farshi Salwar Suits",
     link: "#collection"
   },
   {
-    image: "/images/hero/hero-dresses-landscape.jpg",
+    desktopImage: "/images/hero/hero-dresses-landscape.jpg",
+    mobileImage: "/images/catalog/dress-yellow-polka-front.jpg",
     ctaText: "Pure Cotton Dresses & Gowns",
     link: "#collection"
   },
   {
-    image: "/images/hero/hero-kurtis-landscape.jpg",
+    desktopImage: "/images/hero/hero-kurtis-landscape.jpg",
+    mobileImage: "/images/catalog/kurti-pink-hakoba-front.jpg",
     ctaText: "Handcrafted Cotton Kurtis",
     link: "#collection"
   },
   {
-    image: "/images/hero/hero-trousers-landscape.jpg",
+    desktopImage: "/images/hero/hero-trousers-landscape.jpg",
+    mobileImage: "/images/catalog/trouser-navy-front.jpg",
     ctaText: "Tailored Wide-Leg Trousers",
     link: "#collection"
   }
@@ -54,10 +60,17 @@ export default function HeroSlider() {
             idx === activeSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
         >
+          {/* Desktop & Tablet: Cinematic 16:9 Landscape Banner */}
           <img
-            src={slide.image}
+            src={slide.desktopImage}
             alt="Cotnera Collection"
-            className="w-full h-full object-cover object-center filter brightness-[0.9]"
+            className="hidden md:block w-full h-full object-cover object-center filter brightness-[0.9]"
+          />
+          {/* Mobile: Full-Length 3:4 Vertical Portrait Photo (Zero Side Crop) */}
+          <img
+            src={slide.mobileImage}
+            alt="Cotnera Collection"
+            className="block md:hidden w-full h-full object-cover object-center filter brightness-[0.9]"
           />
           {/* Subtle Gradient Vignette */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60" />

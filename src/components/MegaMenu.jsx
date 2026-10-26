@@ -44,7 +44,7 @@ export default function MegaMenu() {
 
   return (
     <div 
-      className={`fixed inset-0 z-[50] bg-[#f5f5f5] pt-[4.8vw] pb-[1.5vw] px-[1.5vw] flex flex-col justify-between overflow-y-auto transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed inset-0 z-[50] bg-[#f5f5f5] pt-[68px] pb-8 px-3.5 md:pt-[4.8vw] md:pb-[1.5vw] md:px-[1.5vw] flex flex-col justify-between overflow-y-auto transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isMenuOpen 
           ? 'opacity-100 pointer-events-auto [clip-path:inset(0_0_0%_0)]' 
           : 'opacity-0 pointer-events-none [clip-path:inset(0_0_100%_0)]'
