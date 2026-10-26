@@ -2,23 +2,33 @@ import React, { useState, useEffect } from 'react';
 
 const HERO_SLIDES = [
   {
-    image: "/images/catalog/anarkali-rust-front.jpg",
+    image: "/images/hero/hero-anarkali-landscape.jpg",
     ctaText: "Pure Chanderi Anarkali '26",
     link: "#collection"
   },
   {
-    image: "/images/catalog/coord-brushstroke-peplum-editorial.jpg",
+    image: "/images/hero/hero-coord-landscape.jpg",
     ctaText: "Tailored Co-ord Sets",
     link: "#collection"
   },
   {
-    image: "/images/catalog/salwar-sky-yellow-front.jpg",
+    image: "/images/hero/hero-farshi-landscape.jpg",
     ctaText: "Awadhi Farshi Salwar Suits",
     link: "#collection"
   },
   {
-    image: "/images/catalog/dress-yellow-polka-front.jpg",
+    image: "/images/hero/hero-dresses-landscape.jpg",
     ctaText: "Pure Cotton Dresses & Gowns",
+    link: "#collection"
+  },
+  {
+    image: "/images/hero/hero-kurtis-landscape.jpg",
+    ctaText: "Handcrafted Cotton Kurtis",
+    link: "#collection"
+  },
+  {
+    image: "/images/hero/hero-trousers-landscape.jpg",
+    ctaText: "Tailored Wide-Leg Trousers",
     link: "#collection"
   }
 ];
