@@ -3,7 +3,7 @@ export const BRAND = {
   tagline: "wear it. style it. rewear it.",
   phone: "+91 95081 23270",
   whatsapp: "+91 95081 23270",
-  upiId: "9508123270@upi",
+  upiId: "riyaranjan8242@oksbi",
   upiName: "COTNERA",
   instagram: "https://instagram.com/cotnera__",
   instagramHandle: "@cotnera__",
