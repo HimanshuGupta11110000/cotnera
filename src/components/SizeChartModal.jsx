@@ -162,7 +162,7 @@ export default function SizeChartModal() {
               <span>We offer free bespoke alterations on WhatsApp before dispatch.</span>
             </div>
             <a
-              href={`https://wa.me/916397943289?text=${encodeURIComponent('Hi Cotnera! I need custom sizing help for an order.')}`}
+              href={`https://wa.me/${BRAND.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Cotnera! I need custom sizing help for an order.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-3.5 py-1.5 rounded-full text-xs font-heading font-bold transition-transform hover:scale-105 shrink-0 shadow-sm"

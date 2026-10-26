@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, ArrowLeft, Sparkles, MessageCircle } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
-import { CATEGORIES, PRODUCTS } from '../data/mockData';
+import { CATEGORIES, PRODUCTS, BRAND } from '../data/mockData';
 import ProductCard from './ProductCard';
 
 const CATEGORY_METADATA = {
@@ -195,7 +195,7 @@ export default function CategoryPageView({ categoryId }) {
             </p>
           </div>
           <a
-            href="https://wa.me/916397943289?text=Hi%20Cotnera!%20I%20have%20a%20question%20about%20your%20collection"
+            href={`https://wa.me/${BRAND.whatsapp.replace(/[^0-9]/g, '')}?text=Hi%20Cotnera!%20I%20have%20a%20question%20about%20your%20collection`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full font-heading text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shrink-0 shadow-sm"

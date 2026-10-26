@@ -84,7 +84,7 @@ function Storefront() {
                     24x7 Customer Support
                   </h4>
                   <p className="text-[11px] md:text-[0.65vw] text-neutral-500 mt-1 leading-relaxed">
-                    Call & WhatsApp anytime at +91 63979 43289
+                    Call & WhatsApp anytime at +91 95081 23270
                   </p>
                 </div>
               </div>

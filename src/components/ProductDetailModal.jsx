@@ -391,7 +391,7 @@ export default function ProductDetailModal() {
                   </p>
                 </div>
                 <a
-                  href={`https://wa.me/916397943289?text=${encodeURIComponent(`Hi Cotnera! I want custom sizing / order inquiry for ${selectedProduct.name} (Code: ${selectedProduct.id})`)}`}
+                  href={`https://wa.me/${BRAND.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi Cotnera! I want custom sizing / order inquiry for ${selectedProduct.name} (Code: ${selectedProduct.id})`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-heading font-bold flex items-center gap-1 transition-colors cursor-pointer shrink-0"
