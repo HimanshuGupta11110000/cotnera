@@ -14,6 +14,7 @@ import SizeChartModal from './components/SizeChartModal';
 import ProductDetailModal from './components/ProductDetailModal';
 import CategoryPageView from './components/CategoryPageView';
 import { Menu, Search, ShoppingBag } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 function Storefront() {
   const { cartCount, setIsCartOpen, setIsMenuOpen, setIsSearchOpen, currentRoute } = useStore();
@@ -136,6 +137,7 @@ export default function App() {
   return (
     <StoreProvider>
       <Storefront />
+      <Analytics />
     </StoreProvider>
   );
 }
