@@ -30,3 +30,4 @@ ig-*.json
 incoming_images/
 incoming_images_archive/
 scratch/
+public/images/catalog_watermark_backup/
