@@ -9,7 +9,7 @@ const FITS_TABS_DATA = [
       { id: 'prod-sitara-peplum', name: 'Sitara Halter Peplum Set', image: '/images/catalog/IMG-20261017-WA0039.jpg', price: 2339, color: 'Ivory & Gold', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
       { id: 'prod-denim-halter', name: 'Denim Halter Maxi Dress', image: '/images/catalog/IMG-20261017-WA0043.jpg', price: 2249, color: 'Indigo Chambray', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
       { id: 'prod-beige-vest', name: 'Beige Tailored Vest Set', image: '/images/catalog/IMG-20261017-WA0032.jpg', price: 2249, color: 'Warm Sand', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
-      { id: 'prod-prism-coord', name: 'Prism Geometric Co-ord', image: '/images/catalog/IMG-20261017-WA0029.jpg', price: 1980, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-prism-coord', name: 'Prism Abstract Peplum Palazzo Set', image: '/images/catalog/coord-brushstroke-peplum-front.jpg', price: 1899, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
     ]
   },
   {
@@ -17,17 +17,17 @@ const FITS_TABS_DATA = [
     products: [
       { id: 'prod-beige-vest-set', name: 'Sahara Sand Tailored Vest Set', image: '/images/catalog/coord-oatmeal-sand-vest-front.jpg', price: 2339, color: 'Warm Sand', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
       { id: 'prod-noir-vest-trousers', name: 'Noir Linen Waistcoat Set', image: '/images/catalog/coord-noir-tailored-vest-front.jpg', price: 2339, color: 'Jet Black', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
-      { id: 'prod-coord-green-ikat', name: 'Avani Emerald Ikat Vest & Skirt Set', image: '/images/catalog/coord-green-ikat-front.jpg', price: 2249, color: 'Emerald Green', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
-      { id: 'prod-prism-coord', name: 'Prism Abstract Peplum Palazzo Set', image: '/images/catalog/coord-brushstroke-peplum-front.jpg', price: 2249, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-coord-green-ikat', name: 'Avani Emerald Ikat Vest & Skirt Set', image: '/images/catalog/coord-green-ikat-front.jpg', price: 1589, color: 'Emerald Green', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+      { id: 'prod-prism-coord', name: 'Prism Abstract Peplum Palazzo Set', image: '/images/catalog/coord-brushstroke-peplum-front.jpg', price: 1899, color: 'Slate & Sand', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
     ]
   },
   {
     name: 'Festive & Kurtis',
     products: [
-      { id: 'prod-rust-orange-anarkali', name: 'Surya Rust Orange Anarkali', image: '/images/catalog/IMG-20261017-WA0027.jpg', price: 3149, color: 'Rust Orange', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
-      { id: 'prod-pink-organza-anarkali', name: 'Gulabo Pink Organza Anarkali', image: '/images/catalog/IMG-20261017-WA0053.jpg', price: 2969, color: 'Rose Pink', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
-      { id: 'prod-indigo-kurti', name: 'Indigo Floral Kurti Set', image: '/images/catalog/IMG-20260930-WA0007.jpg', price: 1799, color: 'Indigo Blue', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
-      { id: 'prod-yellow-polka-anarkali', name: 'Mustard Polka Festive Gown', image: '/images/catalog/IMG-20261017-WA0041.jpg', price: 1620, color: 'Mustard Yellow', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-anarkali-surya-terracotta', name: 'Surya Terracotta Anarkali Set', image: '/images/catalog/anarkali-rust-front.jpg', price: 3599, color: 'Rust Orange', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-anarkali-gulabi-blush', name: 'Gulabi Blush Chanderi Anarkali', image: '/images/catalog/anarkali-blush-front.jpg', price: 3599, color: 'Rose Pink', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-kurti-pink-hakoba-halter', name: 'Blush Pink Hakoba Halter Kurti', image: '/images/catalog/kurti-pink-hakoba-front.jpg', price: 999, color: 'Blush Pink', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
+      { id: 'prod-mustard-polka-gown', name: 'Basanti Yellow Polka Flared Midi', image: '/images/catalog/dress-yellow-polka-front.jpg', price: 2249, color: 'Mustard Yellow', sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] },
     ]
   }
 ];
@@ -99,7 +99,7 @@ export default function FitsGallery() {
               <ArrowUpRight className="w-4 h-4 md:w-[1vw] md:h-[1vw] text-[#482922]" />
             </div>
             <span className="font-heading text-xs md:text-[0.85vw] font-semibold text-[#482922] relative pb-[0.2vw] border-b border-[#482922]">
-              View All 22 Pieces
+              View All 26 Pieces
             </span>
           </a>
         </div>
